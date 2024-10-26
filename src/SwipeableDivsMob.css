@@ -26,17 +26,19 @@
     scroll-behavior: smooth;
     padding: 20px 0;
     touch-action: pan-x;
+    overflow-y: auto; /* Enables vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
   }
   
   /* Individual section styling */
   .section-reviews {
-    flex: 0 0 265px;
-    margin: 0 10px;
-    scroll-snap-align: center;
-    padding: 0;
-    position: relative;
-    background-color: transparent;
-  }
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 265px; /* Set fixed width for horizontal scroll */
+    margin-right: 20px; /* Add gap between sections */
+    display: flex; /* Allow vertical stacking of content */
+    flex-direction: column; /* Stack content vertically within the section */
+}
+
   
   /* Review image styling */
   .review-image {

@@ -70,11 +70,8 @@ const HeroProduct = () => {
 
               {/* Add Buttons */}
               <div className="hero-buttons-mob">
-                <button className="hero-button-mob">Оставить заявку</button>
-                <button className="hero-button hero-button-with-arrow-mob">
-                  Выбрать курс
-                  <img src={arrow} alt="Arrow" />
-                </button>
+                <button className="hero-button">Оставить заявку</button>
+                <GradientButton arrow={true} text="Выбрать курс" width="265px" height="51px" fontSize="18px"></GradientButton>
               </div>
 
               <div className="text-with-images-mob">
