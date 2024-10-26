@@ -1,0 +1,66 @@
+.quick-registration-container {
+    width: 705px;
+    height: 520px;
+    position: relative;
+    padding: 50px;
+  }
+  
+  .quick-registration-text {
+    margin-top: 0;
+    font-size: 32px;
+    color: #4F9FD7;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .quick-registration-description {
+
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .image-container {
+    margin-top: 23px; /* 23px below the description text */
+    display: flex;
+    justify-content: start; /* Align image to the start of the container */
+  }
+  
+  .registration-image {
+    width: 385px;
+    height: auto;
+    margin-left: 215px;
+  }
+  
+  .button-container {
+    padding: 0;
+    margin: 0;
+    margin-top: -90px; /* Position 246px lower than the text */
+    margin-left: 15px;
+    display: flex;
+    justify-content: start; /* Align button to the start of the container */
+    padding: 0;
+  }
+  
+  .register-button {
+    width: 260px;
+    height: 56px;
+    z-index: 10; /* Ensure button is on top */
+    background-color: #4F9FD7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 22px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+  }
+  .register-arrow{
+    margin-left: 10px;
+  }
+  

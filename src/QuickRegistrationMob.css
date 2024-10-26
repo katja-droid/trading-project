@@ -1,0 +1,66 @@
+.quick-registration-container-mob {
+    width: 265px; /* Full width for mobile */
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding in width */
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center align items */
+    margin-top: 50px;
+}
+
+.quick-registration-text-mob {
+    margin: 0;
+    font-size: 20px; /* Smaller font size for mobile */
+    color: #4F9FD7;
+    padding: 0;
+    text-align: left; /* Center text */
+    width: 100%;
+}
+
+.quick-registration-description-mob {
+    font-size: 14px; /* Smaller font size for mobile */
+    color: #fff;
+    padding: 0;
+   
+    text-align: left; /* Center text */
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.image-container-mob {
+    margin-top: 15px; /* Smaller margin below the description */
+    display: flex;
+    justify-content: center; /* Center the image */
+    width: 100%; /* Ensure full width for alignment */
+}
+
+.registration-image-mob {
+    width: 265px; /* Fixed width for mobile */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.button-container-mob {
+    margin-top: 20px; /* Add space above button */
+    display: flex;
+    justify-content: center; /* Center the button */
+    width: 100%; /* Ensure full width for alignment */
+}
+
+.register-button-mob {
+    width: 100%; /* Smaller width for mobile */
+    height: 50px; /* Smaller height for mobile */
+    background-color: #4F9FD7;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px; /* Smaller font size for mobile */
+    position: relative;
+    padding: 0;
+}
+
+.register-arrow-mob {
+    margin-left: 10px;
+}

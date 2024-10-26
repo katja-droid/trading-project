@@ -1,0 +1,77 @@
+.grid-container-h {
+  display: grid;
+  grid-template-columns: 330px 750px 330px; /* Three equal columns */
+  gap: 65px 0; /* Set vertical spacing to 65px, horizontal spacing is 0 */
+  height: auto; /* Allow height to adjust based on content */
+  padding-bottom: 150px;
+}
+
+.grid-item-h {
+  text-align: left; /* Center align text */
+}
+
+/* Full-height pic class to make it span all rows */
+.full-height-pic {
+  grid-column: 2; /* Spans only the second (middle) column */
+  grid-row: 1 / span 3; /* Spans from the first row to the last row */
+  background-color: transparent; /* Transparent to show the background image */
+}
+
+/* Full-width section with background image */
+.full-width-section {
+  width: 100%; /* Take the full width of the column */
+  height: 100%; /* Take the full height of the column */
+  background-image: url('./assets/bg_arrows.svg'); /* Set the background image */
+  background-size: contain; /* Cover the entire section */
+  background-position: center; /* Center the background image */
+  display: flex; /* Use flexbox to center the image */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-repeat: no-repeat;
+}
+
+.how-image {
+  max-width: 510px; /* Adjust as needed */
+  max-height: 510px; /* Adjust as needed */
+}
+
+/* Card styling */
+.card {
+  background: linear-gradient(150.12deg, rgba(43, 61, 88, 0.55) 6.16%, rgba(34, 55, 85, 0.55) 92.54%);
+  border-radius: 25px; /* Round corners */
+  border: 1px solid transparent; /* Optional: border box */
+  height: 200px;
+  display: flex; /* Use flex to center content vertically */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center;
+  margin: 0; /* Ensure no margin on the card */
+  box-sizing: border-box
+}
+
+/* Title and paragraph styling */
+.card h4 {
+  font-family: 'SF UI Display', sans-serif; /* Ensure font is correct */
+  font-weight: 400; /* Set font weight */
+  font-size: 24px; /* Set font size */
+  color: white; /* Set color */
+
+  width: 294px;
+  margin: 0; /* Ensure no margin on the card */
+  margin-bottom: 12px; /* Set margin below title */
+}
+
+.card p {
+  font-family: 'SF UI Display', sans-serif; /* Ensure font is correct */
+  color: #A9A9A9; /* Set text color */
+  font-size: 20px; /* Set font size */
+  line-height: 26px; /* Set line height */
+  width: 294px;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Last column styling for Item 6 */
+.last-column {
+  grid-column: 3; /* Ensure this item goes into the last (right) column */
+}

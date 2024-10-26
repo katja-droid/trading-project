@@ -1,0 +1,129 @@
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+}
+
+.grid-item {
+  width: 330px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.3s ease;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* Add padding only for the selected item */
+.grid-item.selected {
+  width: 690px; /* Expand the selected card */
+  height: 690px; /* Height of the selected card */
+  background-image: url(./assets/selected_trainer_desktop_bg.png); /* Optional: change background color when selected */
+  background-size: cover;
+  padding: 30px; /* Add padding only for selected */
+}
+
+.photo-wrapper {
+  position: relative;
+  height: 440px; /* Height for selected image */
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.item-photo {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0; /* Round corners for the top image */
+}
+
+.default-photo {
+  height: 414px; /* Height for non-selected trainers */
+  margin-top: 33px;
+}
+
+.selected-photo {
+  height: 440px; /* Height for selected trainer */
+}
+
+/* Name badge overlay */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners for the badge */
+  z-index: 1; /* Ensure the badge appears above the image */
+}
+
+.default-info {
+  border-radius: 0 0 10px 10px; /* Round corners for the inner block */
+  padding: 30px 40px; /* Default padding */
+  text-align: left;
+  background-image: url(./assets/trainers-text-bg-desktop.png); /* Optional: change background color when selected */
+  height: 190px;
+}
+
+.selected-info {
+  padding: 0; /* No padding for selected info */
+}
+
+.info-container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+.info-text {
+  flex: 1; /* Allow text to take remaining space */
+ 
+}
+
+.trainer-role {
+  font-size: 1.2rem;
+  color: #4F9FD7;
+  font-family: 'SF UI Display';
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.trainer-description {
+  font-size: 1rem;
+  color: #FFFFFF;
+  line-height: 30px;
+  font-family: 'SF UI Display';
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.photo-wrapper {
+  position: relative;
+  height: 440px; /* Height for selected image */
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.badge {
+  position: absolute;
+  top: 10px; /* Default position for selected items */
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners for the badge */
+  z-index: 1; /* Ensure the badge appears above the image */
+}
+
+/* Lower the badge for non-selected items */
+.grid-item:not(.selected) .badge {
+  top: 43px; /* Move badge lower for non-selected items */
+}

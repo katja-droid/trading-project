@@ -1,0 +1,135 @@
+.swipeable-container-swd {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+   
+  }
+  
+  .swipeable-container-swd {
+    position: relative;
+    width: 100%; /* You can set a specific width if needed */
+    height: 500px;
+    overflow: hidden;
+}
+
+.swipeable-div-swd {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: calc(1410px * 3); /* Total width based on number of divs */
+}
+
+.swipeable-content-swd {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    width: 1410px; /* Fixed width for each div */
+    height: 100%;
+}
+
+/* Add box-sizing to handle padding and border */
+* {
+    box-sizing: border-box;
+}
+
+  
+  .image-container-swd {
+    width: 450px; /* Fixed width for image container */
+    height: 100%; /* Full height */
+    top: 0;
+  }
+  
+  .left-image-swd {
+    width: 450px;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-top: 4px;
+  }
+  
+  .info-container-swd {
+    flex: 1; /* Allow text to take remaining space */
+    padding: 75px 75px 52px 75px; /* Space between image and text */
+    display: flex;
+    flex-direction: column; /* Stack info vertically */
+    justify-content: center; /* Center content vertically */
+    box-sizing: border-box;
+    height: 500px;
+    background-image: url('./assets/review_background_info.png');
+    background-size: cover;
+    top: 0;
+  }
+  
+  .name-swd {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    color: #4F9FD7;
+    font-family: 'SF UI Display';
+    margin-top: 15px;
+    font-weight: 700;
+    MARGIN-BOTTOM: 10px;
+  }
+  
+  .title-swd {
+    font-size: 20px;
+    color: #A9A9A9;
+    font-family: 'SF UI Display';
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    margin-bottom: 1px;
+  }
+  
+  .course-swd {
+    font-size: 20px;
+    color: #A9A9A9;
+    font-family: 'SF UI Display';
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+  }
+  
+  .feedback-swd {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'SF UI Display';
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    text-align: justify;
+    margin-top: 14px;
+  }
+  
+  .arrow-swd {
+    position: absolute;
+    top: 75px;
+    right: 75px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1; /* Ensure arrows are above content */
+  }
+  
+  .arrow-swd.left {
+    right: 151px; /* Adjust as needed for spacing */
+  }
+  .feedback-button-swd {
+    margin-top: 64px; /* Pushes the button to the bottom of the info block */
+    
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'SF UI Display';
+    font-weight: 600;
+    transition: none;
+  
+    align-self: flex-end; /* Aligns the button to the right */
+    width: 240px;
+    height: 56px;
+    background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+    color: #000;
+    border: none;
+}
+
+.feedback-button-swd:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

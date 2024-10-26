@@ -1,0 +1,177 @@
+/* Navbar */
+.navbar {
+
+    padding: 17px 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .navbar-logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 9px; /* Always keep 9px gap */
+  }
+  
+  .navbar-logo span {
+    font-family: 'SF UI Display', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(to right, #A9E1D3, #8CC2E9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  /* Adjust font size based on screen width */
+  @media (min-width: 1280px) {
+    .navbar-logo span {
+      font-size: 22px; /* Above 1279px */
+    }
+  }
+  
+  @media (max-width: 1279px) {
+    .navbar-logo span {
+      font-size: 18px; /* Below 1279px */
+    }
+  }
+  
+  /* Navigation Links */
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 39px; /* Spacing between links now 39px */
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #A9A9A9;
+    font-family: 'SF UI Display', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 123.4%; /* Set line-height to 123.4% */
+    position: relative;
+  }
+  
+  .navbar-links a:hover {
+    color: #4F9FD7;
+  }
+  
+  /* Underline effect on hover */
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -17px;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-links a:hover::after {
+    background-color: #4F9FD7;
+  }
+  
+  /* Icons */
+  .navbar-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  
+ /* Icons */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px; /* Space between icons */
+}
+
+.navbar-icons a {
+  display: flex; /* Ensures the anchor tags only take up the size of the icon */
+  width: 30px; /* Explicit width for the icon container */
+  height: 30px; /* Explicit height for the icon container */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.navbar-icon {
+  width: 100%; /* Make the icon take up the full width of its container */
+  height: 100%; /* Make the icon take up the full height of its container */
+  object-fit: contain; /* Ensure the icon scales correctly */
+}
+
+  
+  /* Language Selector */
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Make this relative to position the overlay */
+  }
+  
+  .lang-selector img.arrow-icon {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .lang-selector img.arrow-icon.open {
+    transform: rotate(180deg); /* Rotate arrow when open */
+  }
+  
+  /* Language Overlay */
+  .lang-overlay {
+    position: absolute;
+    top: 100%; /* Align the overlay directly below the lang-selector */
+    left: 0; /* Align the overlay with the lang-selector on the x-axis */
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    z-index: 10;
+    min-width: 100%; /* Ensure the overlay takes the width of the lang-selector */
+  }
+  
+  .lang-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .lang-options li {
+    font-family: 'SF UI Display', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .lang-options li:hover {
+    color: #4F9FD7;
+  }
+  /* More Icon */
+.more-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 0; /* Ensure no margin on the left for better alignment */
+}
+
+@media (max-width: 600px) {
+  .more-icon {
+    margin-left: 0; /* Make sure it's aligned properly for small screens */
+  }
+}
+.navbar-icon:hover {
+  filter: brightness(0) invert(1);
+}

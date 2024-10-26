@@ -1,0 +1,33 @@
+.registration-container {
+    display: flex;
+    width: 100%; /* Adjust as needed */
+ border-radius: 25px;
+    height: 520px;
+    margin: 0 auto;
+  }
+  
+  .registration-block {
+  
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    color: white; /* Adjust text color based on your background */
+   
+    background-size: cover; /* Ensure background images cover the block */
+    background-position: center; /* Center the background image */
+  }
+  
+  .block-one {
+    background-image: url('./assets/block-one-bg.png'); /* Path to the first block's background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 705px;
+  }
+  
+  .block-two {
+    background-image: url('./assets/block-two-bg.png'); /* Path to the second block's background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 705px;
+  }
+  

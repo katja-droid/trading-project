@@ -1,0 +1,28 @@
+.gradient-button {
+    position: relative;
+    padding: 0; /* No padding for button */
+    border: none; /* No border */
+    border-radius: 10px; /* Match border radius */
+    cursor: pointer; /* Pointer on hover */
+    background-color: transparent; /* Transparent background */
+    color: transparent; /* Hide text color */
+    font-size: 22px; /* Adjust as necessary */
+    font-weight: bold; /* Bold text */
+    overflow: hidden; /* Prevent overflow */
+    background-image: linear-gradient(to right, red, orange, yellow, green, indigo, blue);
+    background-clip: text; /* Clip the background to text */
+    -webkit-background-clip: text; /* Safari support */
+    z-index: 2; /* Set a higher z-index */
+}
+
+.gradient-button img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px; /* Match border radius */
+    object-fit: cover; /* Cover image */
+    opacity: 0.2; /* Adjust opacity if needed */
+    z-index: 1; /* Lower z-index than text */
+}

@@ -1,0 +1,71 @@
+/* Overlay Menu Styles */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(12, 43, 66, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Center the menu vertically */
+  z-index: 42;
+}
+
+.overlay-menu-content {
+  width: 265px; /* Set the fixed width */
+  margin: 0 auto; /* Center the content horizontally */
+  display: flex; /* Use flex to align items */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.overlay-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.overlay-menu-links li {
+  margin: 0;
+}
+
+.overlay-menu-links li:not(:last-child) {
+  margin-bottom: 25px;
+}
+.overlay-menu-links a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjusted close button position */
+.overlay-menu-close-button {
+  position: absolute; /* Keeps it fixed to the overlay */
+  top: 20px; /* Distance from the top */
+  right: 13.06% ; /* Distance from the right */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.overlay-menu-close-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Social Icons */
+.overlay-menu-social {
+  display: flex;
+  justify-content: center; /* Center icons horizontally */
+  align-items: center; /* Center icons vertically */
+  margin-top: 20px; /* Space between links and icons */
+}
+
+.overlay-menu-icon {
+  width: 30px; /* Set the size of the icons */
+  height: 30px;
+  margin: 0 10px; /* Space between icons */
+}

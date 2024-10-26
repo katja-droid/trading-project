@@ -1,0 +1,89 @@
+.your-component-rvwmb {
+    text-align: center; /* Center align the text */
+  margin-bottom: 36px;
+  }
+  
+  .heading-rvwmb {
+    font-family: 'SF UI Display', sans-serif;
+    font-weight: 100; /* Thin */
+    font-size: 18px; /* Size for "ресурс, где" */
+    color: #FFFFFF; /* White color */
+    letter-spacing: 0.82em; /* Set letter spacing */
+    text-transform: uppercase; /* Uppercase */
+    text-align: center !important;
+    width: 265px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .main-text-rvwmb {
+    font-family: 'SF UI Display', sans-serif;
+    font-weight: 900; /* Black */
+    font-size: 48px; /* Adjusted size */
+    color: transparent; /* Make text transparent to show gradient */
+    background: linear-gradient(to right, #A9E1D3, #8CC2E9); /* Gradient */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    margin: 10px 0; /* Add margin */
+    text-transform: uppercase; /* Uppercase */
+    letter-spacing: -0.06em;
+  }
+  
+  .card-container-rvwmb {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the cards */
+    gap: 15px; /* Space between cards */
+  }
+  
+  .card-rvwmb {
+    width: 265px; /* Fixed width for cards */
+    height: 150px; /* Fixed height for cards */
+    color: white; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside cards */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-size: cover; /* Cover the entire card with background image */
+    background-position: center; /* Center the background image */
+  }
+  
+  .card-rvwmb h3 {
+    margin: 0; /* Remove default margin */
+    font-family: 'SF UI Display', sans-serif;
+    font-size: 16px; /* Card title size */
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 13px;
+  }
+  
+  .card-rvwmb p {
+    font-family: 'SF UI Display', sans-serif;
+    font-size: 14px; /* Card text size */
+    text-align: justify; /* Justify text */
+    color: #A9A9A9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Background images for each card */
+  .bg-item-1-mob {
+    background-image: url('./assets/bg-item-1-mob.png'); /* Update path if necessary */
+  }
+  
+  .bg-item-2-mob {
+    background-image: url('./assets/bg-item-2-mob.png'); /* Update path if necessary */
+  }
+  
+  .bg-item-3-mob {
+    background-image: url('./assets/bg-item-3-mob.png'); /* Update path if necessary */
+  }
+  
+  .bg-item-4-mob {
+    background-image: url('./assets/bg-item-4-mob.png'); /* Update path if necessary */
+  }
+  
+  .bg-item-5-mob {
+    background-image: url('./assets/bg-item-5-mob.png'); /* Update path if necessary */
+  }
+  

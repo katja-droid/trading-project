@@ -1,0 +1,97 @@
+/* Line indicators container centered with specific width */
+.line-indicators-reviews {
+    display: flex;
+    justify-content: flex-end;
+    width: 266px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Individual line indicator styling */
+  .line-indicator-reviews {
+    width: 15px;
+    cursor: pointer;
+  }
+  
+  .line-indicator-reviews:not(:last-child) {
+    margin: 0;
+    margin-right: 6px;
+  }
+  
+  /* Container for horizontal scrollable sections */
+  .scroll-container-reviews {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    touch-action: pan-x;
+  }
+  
+  /* Individual section styling */
+  .section-reviews {
+    flex: 0 0 265px;
+    margin: 0 10px;
+    scroll-snap-align: center;
+    padding: 0;
+    position: relative;
+    background-color: transparent;
+  }
+  
+  /* Review image styling */
+  .review-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Adds space between the image and the content */
+  }
+  
+  /* Name and title styling */
+  .name-reviews {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #4F9FD7;
+    font-family: 'SF UI Display';
+    font-size: 20px;
+  }
+  
+  .title-reviews {
+    font-size: 1rem;
+    color: #4F9FD7;
+    font-family: 'SF UI Display';
+  }
+  
+  .course-reviews {
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'SF UI Display';
+    font-size: 14px;
+  }
+  
+  .feedback-reviews {
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'SF UI Display';
+    font-size: 14px;
+  }
+  
+  /* Hide scrollbar for better UX */
+  .scroll-container-reviews::-webkit-scrollbar {
+    display: none;
+  }
+  .review-image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .review-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .stars-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 85px;
+  }
+  

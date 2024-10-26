@@ -1,0 +1,91 @@
+/* LangComponent.css */
+.lang-selector {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    
+  }
+  
+  .lang-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .arrow-icon img {  width: 8px;
+    height: 6px;}
+  
+  .arrow-icon {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    width: 8px;
+    height: 6px;
+  }
+  
+  .arrow-icon.open {
+    transform: rotate(180deg);
+    width: 8px;
+    height: 6px;
+  }
+  
+  /* Language Overlay */
+  .lang-overlay {
+    position: absolute;
+    top: 100%; /* Align below the lang-selector */
+    left: 0;
+    width: 99px; /* 50% width, total 99px */
+    height: 88px; /* Height set to 88px */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    overflow: hidden; /* Prevent overflow for pseudo-element */
+    background-color: transparent;
+}
+
+.lang-overlay::before {
+    content: '';
+    position: absolute; /* Position it absolutely within the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./assets/lang-bg.png'); /* Background image */
+    background-size: contain; /* Ensure the background image covers the area */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    opacity: 0.5; /* Set opacity to 50% */
+    z-index: -1; /* Place behind the text */
+     background-color: transparent;
+}
+
+  
+  .lang-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Styling for non-selected languages */
+  .lang-option {
+    font-family: 'SF UI Display', sans-serif;
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    color: #A9A9A9;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Styling for selected languages */
+  .lang-option.selected {
+    font-weight: 500; /* Medium */
+    color: #4F9FD7;
+  }
+  
+  /* Hover effect for both */
+  .lang-option:hover {
+    color: #4F9FD7;
+  }
+  

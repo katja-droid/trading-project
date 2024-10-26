@@ -1,0 +1,39 @@
+.registration-benefits-container {
+    width: 100%;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 
+  }
+  
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 575px;
+  }
+  .benefit-item:not(:first-child){
+    margin-top: 30px;
+  }
+  
+  .checkmark-icon {
+    width: 34px; /* Adjust size as needed */
+    height: 34px;
+    margin-right: 10px;
+  }
+  
+  .benefit-text {
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-left: 16px;
+  }
+  

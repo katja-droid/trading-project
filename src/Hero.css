@@ -1,0 +1,284 @@
+.hero-container {
+  position: relative;
+  width: 95.3vw;
+  max-width: 1665px;
+  height: 869.25px;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: flex-start; /* Centers content horizontally */
+
+
+}
+@media (min-width: 1410px) {
+  .hero-container {
+      margin-top: -58px; /* Apply negative margin on larger screens */
+  }
+}
+.gradient-heading {
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Hides solid color and shows the gradient */
+}
+.hero-heading {
+  font-family: 'SF UI Display';
+  font-size: 100px;
+  line-height: 98px;
+  color: #FFFFFF;
+  font-weight: 500;
+  z-index: 10000;
+  padding: 0;
+  margin: 0;
+
+}
+
+.hero-text {
+  z-index: 2;
+  font-size: 26px;
+  font-weight: 400;
+  font-family: 'SF UI Display';
+  padding: 25px 0 0 0;
+  margin: 0;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0; /* Stick the image to the top */
+  z-index: -1; /* Ensure it's behind the text */
+  width: 54.57%;
+  max-width: 951.84px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top:40px;
+}
+
+.hero-button {
+  width: 240px;
+  height: 56px;
+ 
+}
+
+.hero-button:first-child {
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  color: #000;
+  border: none;
+ 
+    
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'SF UI Display';
+  font-weight: 600;
+  transition: none;
+
+  align-self: flex-end; /* Aligns the button to the right */
+  width: 240px;
+  height: 56px;
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  color: #000;
+  border: none;
+}
+
+.hero-button-with-arrow {
+  position: relative;
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  color: #8CC2E9;
+  border: none;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  z-index: 1;
+     
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'SF UI Display';
+  font-weight: 600;
+  transition: none;
+
+  align-self: flex-end; /* Aligns the button to the right */
+  width: 240px;
+  height: 56px;
+}
+
+.hero-button-with-arrow::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.hero-button-with-arrow img {
+  margin-left: 8px;
+  z-index: 1;
+}
+
+.hero-button-with-arrow:hover {
+  background: linear-gradient(to top right, #A9E1D3, #8CC2E9);
+  color: #fff;
+}
+
+.images-section {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+}
+
+.images-section img {
+  width: 56px;
+  height: 56px;
+  margin-right: -9px;
+}
+
+.text-with-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 38px;
+}
+
+.right-text {
+  font-size: 18px;
+  color: #fff;
+  margin-left: 20px;
+  line-height: 1.6;
+}
+@media (max-width: 1279px) {
+  .hero-image{
+    display: none;
+  }
+}
+
+
+.hero-container-mob{
+display: block;
+}
+.gradient-heading-mob {
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Hides solid color and shows the gradient */
+
+}
+.hero-heading-mob {
+  font-family: 'SF UI Display';
+  font-size: 42px;
+  line-height: 40px;
+  color: #FFFFFF;
+  font-weight: 500;
+  z-index: 10000;
+  padding: 0;
+  margin: 0;
+  padding-top: 46px;
+}
+.hero-text-mob {
+  z-index: 2;
+  font-size: 13.5px;
+  font-weight: 400;
+  font-family: 'SF UI Display';
+  
+  margin: 0;
+  line-height: 20px;
+  color: #fff;
+  width: 265px;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+.images-section-mob img{
+  width: 46px;
+  height: 46px;
+  margin-right: -8px;
+}
+.right-text-mob {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+
+.hero-buttons-mob {
+  display: flex;
+  flex-direction: column;  /* Arrange buttons in a column */
+  gap: 15px;
+  width: 100%;  /* Ensure buttons take up the full width */
+}
+
+.hero-button-mob {
+  width: 265px;  /* Make buttons fill the container's width */
+  height: 51px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'SF UI Display';
+  font-weight: 600;
+  transition: none;
+}
+
+.hero-button-mob:first-child {
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  color: #000;
+  border: none;
+}
+
+.hero-button-with-arrow-mob {
+  position: relative;
+  background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+  color: #8CC2E9;
+  border: none;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  z-index: 1;
+  width: 100%;  /* Make this button also fill the container's width */
+}
+
+.hero-button-with-arrow-mob::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.hero-button-with-arrow-mob img {
+  margin-left: 8px;
+  z-index: 1;
+}
+
+.hero-button-with-arrow-mob:hover {
+  background: linear-gradient(to top right, #A9E1D3, #8CC2E9);
+  color: #fff;
+}
+.text-with-images-mob {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 38px;
+}
+

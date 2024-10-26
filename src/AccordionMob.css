@@ -1,0 +1,55 @@
+/* AccordionMob.css */
+.accordion-mob {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.accordion-item-mob {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+ 
+}
+
+.accordion-header-mob {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 48px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #2B3D58, #223755); /* Gradient background */
+    height: 60px;
+    transition: background 0.3s ease;
+}
+
+.accordion-header-mob h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #A9A9A9;
+}
+
+.accordion-arrow-mob {
+    transition: transform 0.3s ease;
+    width: 10px;
+}
+
+.accordion-arrow-mob.flipped-mob {
+    transform: rotate(180deg);
+}
+
+.accordion-content-mob {
+    padding: 15px 48px;
+    background-color: #0C2B42;
+    font-size: 14px;
+    text-align: justify;
+    line-height: normal;
+}
+
+.accordion-content-mob p {
+    padding: 0;
+    margin: 0;
+}

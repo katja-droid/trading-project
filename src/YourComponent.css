@@ -1,0 +1,22 @@
+.centered-text {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Take full height of the parent */
+  }
+  
+  .text-item {
+    padding: 20px; /* Add padding for the text */
+    background-color: #e0e0e0; /* Adjust the background color */
+    height: 100%; /* Ensure it takes full height of the grid item */
+  }
+  
+  .item {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 60px; /* Adjust height as needed */
+    margin-bottom: 10px; /* Add space between items */
+    background-color: #b0bec5; /* Adjust the background color */
+  }
+  
