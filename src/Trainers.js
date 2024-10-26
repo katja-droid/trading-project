@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './Trainers.css';
 
 // Import the images as variables
@@ -8,38 +9,38 @@ import trainer3 from './assets/trainer-3-2.png';
 import withScrollEffect from './WithScrollEffect';
 
 const Trainers = () => {
+  const { t } = useTranslation(); // Initialize useTranslation
   const [selectedItem] = useState(1); // Keep the first trainer selected
 
   const trainers = [
     {
       id: 1,
       photo: trainer1,
-      name: 'ДАНИЛА',
-      lastName: 'Анапов',
-      title: 'Специалист по продажам',
-      description: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('trainers.trainer1.name'),
+      lastName: t('trainers.trainer1.lastName'),
+      title: t('trainers.trainer1.title'),
+      description: t('trainers.trainer1.description'),
     },
     {
       id: 2,
       photo: trainer2,
-      name: 'Сергей',
-      lastName: 'СКОКОВ',
-      title: 'Специалист по продажам',
-      description: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('trainers.trainer2.name'),
+      lastName: t('trainers.trainer2.lastName'),
+      title: t('trainers.trainer2.title'),
+      description: t('trainers.trainer2.description'),
     },
     {
       id: 3,
       photo: trainer3,
-      name: 'Вера',
-      lastName: 'АКУМОВА',
-      title: 'Специалист по продажам',
-      description: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('trainers.trainer3.name'),
+      lastName: t('trainers.trainer3.lastName'),
+      title: t('trainers.trainer3.title'),
+      description: t('trainers.trainer3.description'),
     },
   ];
 
   return (
-   
-     <div className="grid-container" >
+    <div className="grid-container">
       {trainers.map((trainer) => (
         <div
           key={trainer.id}
@@ -70,8 +71,7 @@ const Trainers = () => {
         </div>
       ))}
     </div>
-  
   );
 };
 
-export default withScrollEffect (Trainers);
+export default withScrollEffect(Trainers);

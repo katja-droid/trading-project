@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 import './Navbar.css';
 import LangComponent from './LangComponent';
 import logoImage from './assets/logo.svg';
@@ -14,6 +15,7 @@ import FooterBottom from './FooterBottom';
 import withScrollEffect from './WithScrollEffect';
 
 const Footer = () => {
+  const { t } = useTranslation(); // Initialize translation
   const [isOverlayOpen, setOverlayOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -49,7 +51,7 @@ const Footer = () => {
             {/* Logo */}
             <Grid item xs={12} md={3} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-start' }}>
               <a href="/" className="navbar-logo">
-                <img src={logoImage} alt="TradeBaza Logo" />
+                <img src={logoImage} alt={t('footer.logoAlt')} />
                 <span>TradeBaza</span>
               </a>
             </Grid>
@@ -57,20 +59,20 @@ const Footer = () => {
             {/* Language and More Icon */}
             <Grid item xs={12} md={false} sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'space-between' }}>
               <a href="/" className="navbar-logo">
-                <img src={logoImage} alt="TradeBaza Logo" />
+                <img src={logoImage} alt={t('footer.logoAlt')} />
                 <span>TradeBaza</span>
               </a>
-              <img src={moreIcon} alt="More" className="more-icon" onClick={toggleOverlay} />
+              <img src={moreIcon} alt={t('footer.moreAlt')} className="more-icon" onClick={toggleOverlay} />
             </Grid>
 
             {/* Navigation Links */}
             <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' }, justifyContent: 'center' }}>
               <ul className="navbar-links">
-                <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>Об обучении</a></li>
-                <li><a href="#courses" onClick={(e) => handleScroll(e, 'courses')}>Курсы</a></li>
-                <li><a href="#reviews" onClick={(e) => handleScroll(e, 'reviews')}>Отзывы</a></li>
-                <li><a href="#team" onClick={(e) => handleScroll(e, 'team')}>Наша команда</a></li>
-                <li><a href="#faq" onClick={(e) => handleScroll(e, 'faq')}>FAQ</a></li>
+                <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>{t('footer.about')}</a></li>
+                <li><a href="#courses" onClick={(e) => handleScroll(e, 'courses')}>{t('footer.courses')}</a></li>
+                <li><a href="#reviews" onClick={(e) => handleScroll(e, 'reviews')}>{t('footer.reviews')}</a></li>
+                <li><a href="#team" onClick={(e) => handleScroll(e, 'team')}>{t('footer.team')}</a></li>
+                <li><a href="#faq" onClick={(e) => handleScroll(e, 'faq')}>{t('footer.faq')}</a></li>
               </ul>
             </Grid>
 
@@ -94,7 +96,7 @@ const Footer = () => {
           </Grid>
         </nav>
         <FooterBottom />
-        <p className="copyright">© 2022 TradeBaza. All rights reserved. Design: Web-Canape</p>
+        <p className="copyright">© 2022 TradeBaza. {t('footer.allRightsReserved')} {t('footer.designBy')}</p>
       </div>
     </div>
   );

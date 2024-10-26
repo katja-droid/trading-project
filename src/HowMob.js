@@ -1,72 +1,63 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './HowMob.css';
-
-// Import image for the component
-import howImage from './assets/how-image.png'; // Update path if necessary
+import './HowMob.css'; // Import the CSS file for styling
+import howImage from './assets/how-image.png'; // Adjust path as necessary
 import withScrollEffect from './WithScrollEffect';
+import { useTranslation } from 'react-i18next';
 
-const HowMob = ({ heading, text }) => {
-    const paragraphs = [
-        {
-          title: "Курс “Новичок”",
-          text: "Вы сможете открывать первые сделки на бирже и радоваться первой прибыли уже в первый месяц обучения."
-        },
-        {
-          title: "Первая сделка",
-          text: "Бесплатная помощь при первой сделке. Наш эксперт покажет, как имея знания, можно заработать на биржах."
-        },
-        {
-          title: "Биржи всего мира",
-          text: "Вы сможете торговать на всех самых популярных торговых площадках, таких как Forex и другие мировые биржи."
-        },
-        {
-          title: "Повышение уровня",
-          text: "После окончания обучения вас ждет курс повышения знаний, дающий безграничные навыки торговли на бирже."
-        },
-        {
-          title: "Экспертная поддержка",
-          text: "Онлайн сопровождение в процессе прохождения всего обучения. Помощь в любом вопросе по ходу курса."
-        },
-        {
-          title: "Эксклюзивный доступ",
-          text: "Лучшие выпускники будут приглашены на собеседование в нашу команду, получив шанс работать с ведущими специалистами."
-        }
-    ];
+const HowMob = () => {
+  const { t } = useTranslation();
 
-    return (
-        <div className="howmob-container">
-            {/* Heading */}
-            <h1 className='main-heading-mob' id="aboutmb">КАК ПРОХОДИТ <span className='main-heading-span-mob'> ОБУЧЕНИЕ в TRADE BAZa</span></h1>
-          <p className='main-paragraph-mob'>Особенности и преимущества прохождения курсов в Trade Baze, привилегии и гарантии,<br/>
-          которые вы получите доверив нам свой самый ценный ресурс - время</p>
+  return (
+    <div className="howmob-container">
+      {/* Heading */}
+      <h1 className='main-heading-mob' id="aboutmb">
+        {t('how.titlePart1')} <span className='main-heading-span-mob'>{t('how.titlePart2')}</span>
+      </h1>
+      <p className='main-paragraph-mob'>
+        {t('how.description')}
+      </p>
 
-            {/* Image */}
-            <img 
-                src={howImage} 
-                alt="How It Works" 
-                className="howmob-image"
-            />
+      {/* Image */}
+      <img 
+        src={howImage} 
+        alt={t('how.imageAlt')} 
+        className="howmob-image"
+      />
 
-            {/* Paragraphs */}
-            <div className="howmob-paragraphs">
-                {paragraphs.map((paragraph, index) => (
-                    <div 
-                        key={index} 
-                        className={`howmob-paragraph howmob-paragraph-${index % 2 === 0 ? 'even' : 'odd'}`}
-                    >
-                        <h4 className="howmob-paragraph-title">{paragraph.title}</h4>
-                        <p className="howmob-paragraph-text">{paragraph.text}</p>
-                    </div>
-                ))}
-            </div>
+      {/* Paragraphs */}
+      <div className="howmob-paragraphs">
+        <div className="howmob-paragraph howmob-paragraph-even">
+          <h4 className="howmob-paragraph-title">{t('how.courses.beginner.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.courses.beginner.description')}</p>
         </div>
-    );
+        
+        <div className="howmob-paragraph howmob-paragraph-odd">
+          <h4 className="howmob-paragraph-title">{t('how.firstDeal.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.firstDeal.description')}</p>
+        </div>
+
+        <div className="howmob-paragraph howmob-paragraph-even">
+          <h4 className="howmob-paragraph-title">{t('how.globalExchanges.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.globalExchanges.description')}</p>
+        </div>
+
+        <div className="howmob-paragraph howmob-paragraph-odd">
+          <h4 className="howmob-paragraph-title">{t('how.levelUp.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.levelUp.description')}</p>
+        </div>
+
+        <div className="howmob-paragraph howmob-paragraph-even">
+          <h4 className="howmob-paragraph-title">{t('how.expertSupport.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.expertSupport.description')}</p>
+        </div>
+
+        <div className="howmob-paragraph howmob-paragraph-odd">
+          <h4 className="howmob-paragraph-title">{t('how.exclusiveAccess.title')}</h4>
+          <p className="howmob-paragraph-text">{t('how.exclusiveAccess.description')}</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-HowMob.propTypes = {
-    heading: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-};
-
-export default withScrollEffect (HowMob);
+export default withScrollEffect(HowMob);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useTransition } from 'react';
 import { Box, Grid, Container, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -9,10 +9,12 @@ import itemBg3 from './assets/item-bg-3.png'; // Third item background image
 import itemBg4 from './assets/item-bg-4.png'; // Fourth item background image
 import itemBg5 from './assets/item-bg-5.png'; // Fifth item background image
 import withScrollEffect from './WithScrollEffect';
+import { useTranslation } from 'react-i18next';
 
 const YourComponent = () => {
   const theme = useTheme();
-
+  
+  const { t } = useTranslation();
   return (
     <Container
       maxWidth={false}
@@ -56,7 +58,7 @@ const YourComponent = () => {
       textTransform: 'uppercase', // Transform text to uppercase
     }}
   >
-    ресурс, где
+       {t('main.resourceWhere')} 
   </Typography>
   <Typography
     variant="h1" // You can adjust the variant if needed
@@ -72,7 +74,7 @@ const YourComponent = () => {
       letterSpacing: '-0.06em', 
     }}
   >
-    каждый
+ {t('main.everyone')}
   </Typography>
   <Typography
     variant="h1" // You can adjust the variant if needed
@@ -88,7 +90,7 @@ const YourComponent = () => {
       letterSpacing: '-0.06em', 
     }}
   >
-    сделает
+     {t('main.willAchieve')}
   </Typography>
   <Typography
     variant="h1" // You can adjust the variant if needed
@@ -104,7 +106,7 @@ const YourComponent = () => {
       letterSpacing: '-0.06em', 
     }}
   >
-    РЕЗУЛЬТАТ
+      {t('main.result')}
   </Typography>
 </Box>
 
@@ -144,7 +146,7 @@ const YourComponent = () => {
                     mb: '6px', // Add margin-bottom for spacing
                   }}
                 >
-                  Желание
+                    {t('main.desire')}
                 </Typography>
                 <Typography
                   sx={{
@@ -156,7 +158,7 @@ const YourComponent = () => {
                     fontWeight: 400, // Set font weight for smaller text
                   }}
                 >
-                  если ты читаешь это, значит ты уже на верном пути, и можешь приступать к рекомендации следующего пункта, ведь Желание уже привело тебя сюда
+                      {t('main.desireText')}
                 </Typography>
               </Box>
             </Grid>
@@ -191,7 +193,7 @@ const YourComponent = () => {
                     mb: '6px', // Add margin-bottom for spacing
                   }}
                 >
-                  Обучение
+                       {t('main.learning')}
                 </Typography>
                 <Typography
                   sx={{
@@ -203,8 +205,7 @@ const YourComponent = () => {
                     fontWeight: 400, // Set font weight for smaller text
                   }}
                 >
-                  никаких специальных знаний и навыков не требуется, первый курс совершенно бесплатный, но даст всю необходимую базу для старта, главное начать
-                </Typography>
+                      {t('main.learningText')}   </Typography>
               </Box>
             </Grid>
           </Grid>
@@ -238,7 +239,7 @@ const YourComponent = () => {
                     mb: '6px', // Add margin-bottom for spacing
                   }}
                 >
-                  Практика
+                  {t('main.practice')}  
                 </Typography>
                 <Typography
                   sx={{
@@ -250,8 +251,8 @@ const YourComponent = () => {
                     fontWeight: 400, // Set font weight for smaller text
                   }}
                 >
-                  пройдя первый курс, вы получите четкую технику безопасности для своих сбережений, а дальше - вперед к практике и получению опыта
-                </Typography>
+                     {t('main.practiceText')}  
+                     </Typography>
               </Box>
             </Grid>
           </Grid>
@@ -286,7 +287,7 @@ const YourComponent = () => {
                     mb: '6px', // Add margin-bottom for spacing
                   }}
                 >
-                  Профессионализм
+                  {t('main.professionalism')}  
                 </Typography>
                 <Typography
                   sx={{
@@ -298,8 +299,7 @@ const YourComponent = () => {
                     fontWeight: 400, // Set font weight for smaller text
                   }}
                 >
-                  стать профессионалом тебе поможет твой опыт, и единственным критерием твоего профессионализма будет твой доход
-                </Typography>
+                   {t('main.professionalismText')}    </Typography>
               </Box>
             </Grid>
           </Grid>
@@ -332,7 +332,7 @@ const YourComponent = () => {
                     mb: '6px', // Add margin-bottom for spacing
                   }}
                 >
-                  Независимость
+                   {t('main.independence')}  
                 </Typography>
                 <Typography
                   sx={{
@@ -344,8 +344,7 @@ const YourComponent = () => {
                     fontWeight: 400, // Set font weight for smaller text
                   }}
                 >
-                  состояние, когда личные доходы покрывают все расходы, обеспечивая свободу выбора и возможность реализовывать свои жизненные цели
-                </Typography>
+                   {t('main.independenceText')}   </Typography>
               </Box>
             </Grid>
           </Grid>

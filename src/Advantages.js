@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Container, Card, CardContent, Typography } from '@mui/material';
+import { Box, Container, Card, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
 
 // Import images
 import advantage1 from './assets/advantages1.svg'; // Update path if necessary
@@ -9,37 +10,23 @@ import advantage3 from './assets/advantages3.svg'; // Update path if necessary
 import withScrollEffect from './WithScrollEffect';
 
 const advantagesData = [
-  {
-    title: "Классика и стабильность",
-    description: "Первая фондовая биржа в мире была основана в 1585 году.\nУникальный способ заработка, проверенный более чем 4-мя веками.",
-    image: advantage1,
-    bgColor: '#1C2532', // Background color for the first card
-  },
-  {
-    title: "Бесценный опыт",
-    description: "Изучение поведения активов на мировом рынке, приводит к развитию критического мышления, пониманию экономических процессов, развитию памяти и т. п.",
-    image: advantage2,
-    bgColor: ' #1050AC80', // Background color for the second card
-  },
-  {
-    title: "Возможность и доступность",
-    description: "Благодаря современным инструментам, стать участником мировой торговли может каждый - пенсионер из Сибири или школьник из Ростова.",
-    image: advantage3,
-    bgColor: '#1C2532', // Background color for the third card
-  },
+  { image: advantage1, bgColor: '#1C2532' },
+  { image: advantage2, bgColor: '#1050AC80' },
+  { image: advantage3, bgColor: '#1C2532' },
 ];
 
 const Advantages = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   // Define gradient styles for titles
   const gradientStyle = {
     background: 'linear-gradient(135deg, #8CC2E9 0%, #A9E1D3 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    fontSize: { xs: '17px', md: '26px' }, // Set font size for different screen sizes
-    fontWeight: 'bold', // Set font weight
-    textAlign: 'center', // Center text alignment for the gradient titles
+    fontSize: { xs: '17px', md: '26px' },
+    fontWeight: 'bold',
+    textAlign: 'center',
   };
 
   return (
@@ -48,7 +35,7 @@ const Advantages = () => {
         sx={{ 
           display: 'grid', 
           gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
-          gap: { xs: '20px', md: '30px' }  // Adjust gap for different screen sizes
+          gap: { xs: '20px', md: '30px' }  
         }}
       >
         {advantagesData.map((advantage, index) => (
@@ -61,55 +48,54 @@ const Advantages = () => {
             flexDirection: 'column', 
             justifyContent: 'center', 
             borderRadius: '25px', 
-            height: { xs: '188px', md: '452px' } // Conditional height based on screen size
+            height: { xs: '188px', md: '452px' } 
           }}>
-           <div 
-  sx={{
-    padding: 0, 
-    px: '14px', 
-    display: 'flex', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    flexDirection: 'column', 
-    pb: 0 // Remove padding bottom
-  }}
->     <Box  sx={{width: { xs: '50px', md: '80px' },  margin: '0 auto'}}>
-              <img 
-                src={advantage.image} 
-                alt={advantage.title} 
-                style={{ 
-                 width: '100%',
-                 height: 'auto',
-                
-                  borderRadius: theme.shape.borderRadius, 
-                  marginBottom: '10px' // Gap between image and title
-                }} 
-              />
+            <div 
+              sx={{
+                padding: 0, 
+                px: '14px', 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center', 
+                flexDirection: 'column', 
+                pb: 0 
+              }}
+            >     
+              <Box sx={{ width: { xs: '50px', md: '80px' }, margin: '0 auto' }}>
+                <img 
+                  src={advantage.image} 
+                  alt={t(`advantages.${index}.imageAlt`)} 
+                  style={{ 
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: theme.shape.borderRadius, 
+                    marginBottom: '10px'
+                  }} 
+                />
               </Box>
-              <Box sx={{
-                width: {xs: '100%', md: '330px'}, margin: '0 auto'}}>
-              <Typography 
-                variant="h6" 
-                component="div" 
-                gutterBottom 
-                sx={index === 1 ? { color: 'white', ...gradientStyle } : gradientStyle}
-              >
-                {advantage.title}
-              </Typography>
+              <Box sx={{ width: {xs: '100%', md: '330px'}, margin: '0 auto' }}>
+                <Typography 
+                  variant="h6" 
+                  component="div" 
+                  gutterBottom 
+                  sx={index === 1 ? { color: 'white', ...gradientStyle } : gradientStyle}
+                >
+                  {t(`advantages.${index}.title`)}
+                </Typography>
               </Box>
               <Typography 
                 variant="body2" 
                 color="white" 
                 sx={{ 
-                  fontSize: { xs: '12px', md: '20px' }, // Conditional font size for regular text
+                  fontSize: { xs: '12px', md: '20px' }, 
                   lineHeight: {xs: 'normal', md:'30px'}, 
-                  marginBottom: '10px', // Gap between title and text
+                  marginBottom: '10px', 
                   textAlign: 'center',
                   width: {xs: '237px', md: '330px'},
                   margin: '0 auto'
                 }}
               >
-                {advantage.description}
+                {t(`advantages.${index}.description`)}
               </Typography>
             </div>
           </Card>
@@ -119,4 +105,4 @@ const Advantages = () => {
   );
 };
 
-export default withScrollEffect (Advantages);
+export default withScrollEffect(Advantages);

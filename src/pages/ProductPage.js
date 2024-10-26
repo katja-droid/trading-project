@@ -58,7 +58,7 @@ const ProductPage = () => {
           <Box sx={{ gridColumn: 'span 3' }}>
             <SwipeableDivs />
           </Box>
-          <AlsoInteresting excludeCourseName="Основы трейдинга" />
+          <AlsoInteresting excludeCourseId ={1}/>
 
         </Container>
       )}

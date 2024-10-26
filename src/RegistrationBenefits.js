@@ -1,15 +1,14 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './RegistrationBenefits.css';
 import checkmarkIcon from './assets/checkmark.svg'; // Adjust path to your SVG file
 import withScrollEffect from './WithScrollEffect';
 
 const RegistrationBenefits = () => {
-  const benefits = [
-    "Выберите один из онлайн-курсов по торговле на бирже, который соответствует вашим знаниям и целям",
-    "Зарегистрируйтесь за 2 минуты, используя нашего Telegram-бота. Это быстро, удобно и безопасно",
-    "После регистрации вы сможете согласовать детали вашего обучения с нашим администратором",
-    "Как только все детали уточнены, доступ к выбранному курсу будет Вам предоставлен мгновенно"
-  ];
+  const { t } = useTranslation(); // Initialize useTranslation
+
+  // Retrieve benefits from translations
+  const benefits = t('registrationBenefits.benefits', { returnObjects: true });
 
   return (
     <div className="registration-benefits-container">
@@ -23,4 +22,4 @@ const RegistrationBenefits = () => {
   );
 };
 
-export default withScrollEffect (RegistrationBenefits);
+export default withScrollEffect(RegistrationBenefits);

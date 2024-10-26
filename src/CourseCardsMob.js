@@ -14,39 +14,7 @@ import GradientButton from './GradientButton';
 import arrowLeftBright from './assets/arrow-left-bright.svg';
 import arrowRightBright from './assets/arrow-right-bright.svg';
 import withScrollEffect from './WithScrollEffect';
-
-const coursesData = [
-  {
-    price: "Бесплатно",
-    title: "Основы трейдинга",
-    description: "Бесплатный вводный курс для тех, кто уже хочет понять такое трейдинг и биржа",
-    details: "Идеальное начало вашего путешествия в мир трейдинга. Этот бесплатный курс представляет вам основные концепции, термины и инструменты, необходимые для успешного начала трейдинга",
-    duration: "~2 часа",
-    knowledgeStars: threeStars,
-    skillsStars: threeStars,
-    image: courseImage1,
-  },
-  {
-    price: "9,980 руб.",
-    title: "Технический анализ",
-    description: "Платный продвинутый курс для тех, кто прошел первый курс и готов идти дальше",
-    details: "Глубже погрузитесь в мир трейдинга с нашим продвинутым курсом. Узнайте о техническом анализе, формировании стратегий и практических подходах к трейдингу на рынках",
-    duration: "~6 часов",
-    knowledgeStars: threeFiveStars,
-    skillsStars: fourStars,
-    image: courseImage2,
-  },
-  {
-    price: "",
-    title: "Практика",
-    description: "Эксклюзивная возможность пройти практику в офисе команды создателей",
-    details: "10 дней работы в паре с наставником в нашем офисе в башне Москва-сити. Кандидаты будут отобраны в течении 6 месяцев с момента запуска второго курса",
-    duration: "~80 часов",
-    knowledgeStars: fiveStars,
-    skillsStars: fiveStars,
-    image: courseImage3,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const CourseCardsMob = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,7 +30,43 @@ const CourseCardsMob = () => {
       setCurrentIndex(currentIndex - 1);
     }
   };
+  const { t } = useTranslation();
 
+  const coursesData = [
+    {
+      price: t('course.coursesData.0.price'),
+      title: t('course.coursesData.0.title'),
+      description: t('course.coursesData.0.description'),
+      details: t('course.coursesData.0.details'),
+      duration: t('course.coursesData.0.duration'),
+      knowledgeStars: threeStars,
+      skillsStars: threeStars,
+      image: courseImage1,
+      id: 1,
+    },
+    {
+      price: t('course.coursesData.1.price'),
+      title: t('course.coursesData.1.title'),
+      description: t('course.coursesData.1.description'),
+      details: t('course.coursesData.1.details'),
+      duration: t('course.coursesData.1.duration'),
+      knowledgeStars: threeFiveStars,
+      skillsStars: fourStars,
+      image: courseImage2,
+      id: 2,
+    },
+    {
+      price: t('course.coursesData.2.price'),
+      title: t('course.coursesData.2.title'),
+      description: t('course.coursesData.2.description'),
+      details: t('course.coursesData.2.details'),
+      duration: t('course.coursesData.2.duration'),
+      knowledgeStars: fiveStars,
+      skillsStars: fiveStars,
+      image: courseImage3,
+      id: 3,
+    },
+  ];
   return (
     <div className="course-cards-container-mob">
       <button className="arrow-mob left" onClick={handlePrev} disabled={currentIndex === 0}>

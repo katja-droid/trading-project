@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import './TradingCourses.css';
-
-// Import images for the courses
 import courseImage1 from './assets/courseImage1.png';
 import courseImage2 from './assets/courseImage2.png';
 import courseImage3 from './assets/courseImage3.png';
@@ -17,44 +15,63 @@ import lineBright from './assets/line_bright.svg';
 import lineFaded from './assets/line_faded.png';
 import GradientButton from './GradientButton';
 import withScrollEffect from './WithScrollEffect';
-
-const coursesData = [
-  {
-    price: "Бесплатно",
-    title: "Основы трейдинга",
-    description: "Бесплатный вводный курс для тех, кто уже хочет понять такое трейдинг и биржа",
-    details: "Идеальное начало вашего путешествия в мир трейдинга. Этот бесплатный курс представляет вам основные концепции, термины и инструменты, необходимые для успешного начала трейдинга",
-    duration: "~2 часа",
-    knowledgeStars: threeStars,
-    skillsStars: threeStars,
-    image: courseImage1,
-  },
-  {
-    price: "9,980 руб.",
-    title: "Технический анализ",
-    description: "Платный продвинутый курс для тех, кто прошел первый курс и готов идти дальше",
-    details: "Глубже погрузитесь в мир трейдинга с нашим продвинутым курсом. Узнайте о техническом анализе, формировании стратегий и практических подходах к трейдингу на рынках",
-    duration: "~6 часов",
-    knowledgeStars: threeFiveStars,
-    skillsStars: fourStars,
-    image: courseImage2,
-  },
-  {
-    price: "",
-    title: "Практика",
-    description: "Эксклюзивная возможность пройти практику в офисе команды создателей",
-    details: "10 дней работы в паре с наставником в нашем офисе в башне Москва-сити. Кандидаты будут отобраны в течении 6 месяцев с момента запуска второго курса",
-    duration: "~80 часов",
-    knowledgeStars: fiveStars,
-    skillsStars: fiveStars,
-    image: courseImage3,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const TradingCourses = () => {
+  const { t } = useTranslation();
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
   const [startX, setStartX] = useState(0);
+
+  // Define an array of base course data
+  const baseCoursesData = [
+    {
+      priceKey: 'course.coursesData.0.price',
+      titleKey: 'course.coursesData.0.title',
+      descriptionKey: 'course.coursesData.0.description',
+      detailsKey: 'course.coursesData.0.details',
+      durationKey: 'course.coursesData.0.duration',
+      knowledgeStars: threeStars,
+      skillsStars: threeStars,
+      image: courseImage1,
+      id: 1,
+    },
+    {
+      priceKey: 'course.coursesData.1.price',
+      titleKey: 'course.coursesData.1.title',
+      descriptionKey: 'course.coursesData.1.description',
+      detailsKey: 'course.coursesData.1.details',
+      durationKey: 'course.coursesData.1.duration',
+      knowledgeStars: threeFiveStars,
+      skillsStars: fourStars,
+      image: courseImage2,
+      id: 2,
+    },
+    {
+      priceKey: 'course.coursesData.2.price',
+      titleKey: 'course.coursesData.2.title',
+      descriptionKey: 'course.coursesData.2.description',
+      detailsKey: 'course.coursesData.2.details',
+      durationKey: 'course.coursesData.2.duration',
+      knowledgeStars: fiveStars,
+      skillsStars: fiveStars,
+      image: courseImage3,
+      id: 3,
+    },
+  ];
+
+  // Map over the base data to create the translated coursesData
+  const coursesData = baseCoursesData.map(course => ({
+    price: t(course.priceKey),
+    title: t(course.titleKey),
+    description: t(course.descriptionKey),
+    details: t(course.detailsKey),
+    duration: t(course.durationKey),
+    knowledgeStars: course.knowledgeStars,
+    skillsStars: course.skillsStars,
+    image: course.image,
+    id: course.id,
+  }));
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -93,7 +110,7 @@ const TradingCourses = () => {
   return (
     <div className="trading-course-container-mob">
       <h1 className="main-heading-mob">
-        курсы, с которых начинается твоя <span className="main-heading-span-mob"> новая жизнь</span>
+        {t('course.mainHeading')} <span className="main-heading-span-mob">{t('course.newLife')}</span>
       </h1>
       
       <div className="line-indicators-courses-mob">
@@ -127,32 +144,32 @@ const TradingCourses = () => {
               )}
             </div>
             <div className="card-content-mob">
-              <div className="course-title-mob">Курс: <span style={{color: '#8CC2E9'}}>{course.title}</span></div>
+              <div className="course-title-mob">{t('course.titlePrefix')} <span style={{color: '#8CC2E9'}}>{course.title}</span></div>
               <div className="course-description-mob">{course.description}</div>
               <span className="course-details-mob-2">{course.details}</span>
               <div className="course-details-mob">
                 <div className="course-detail-item-mob">
-                  <img src={durationIcon} alt="Duration" className="detail-icon-mob" />
-                  <span className="detail-text-mob">Длительность</span>
+                  <img src={durationIcon} alt={t('course.duration')} className="detail-icon-mob" />
+                  <span className="detail-text-mob">{t('course.duration')}</span>
                   <span className="detail-value-mob">{course.duration}</span>
                 </div>
                 <div className="course-detail-item-mob">
-                  <img src={knowledgeIcon} alt="Знания" className="detail-icon-mob" />
-                  <span className="detail-text-mob">Знания</span>
+                  <img src={knowledgeIcon} alt={t('course.knowledge')} className="detail-icon-mob" />
+                  <span className="detail-text-mob">{t('course.knowledge')}</span>
                   <img src={course.knowledgeStars} alt="Rating" className="stars-icon-mob" />
                 </div>
                 <div className="course-detail-item-mob">
-                  <img src={skillsIcon} alt="Навыки" className="detail-icon-mob" />
-                  <span className="detail-text-mob">Навыки</span>
+                  <img src={skillsIcon} alt={t('course.skills')} className="detail-icon-mob" />
+                  <span className="detail-text-mob">{t('course.skills')}</span>
                   <img src={course.skillsStars} alt="Rating" className="stars-icon-mob" />
                 </div>
               </div>
               {activeIndex === index && (
                 <div className="course-buttons-mob">
-                  <Link to={`/product/${index}`} style={{textDecoration: 'none'}} className="more-btn-mob-2">Подробнее</Link>
+                  <Link to={`/product/${index}`} style={{textDecoration: 'none'}} className="more-btn-mob-2">{t('course.moreDetails')}</Link>
                   <div style={{ position: 'relative', zIndex: 10, marginTop: '10px'}}>
                     <a href="https://t.me/your-telegram-link" target="_blank" rel="noopener noreferrer">
-                      <GradientButton arrow={true} text="Записаться" height="51px" width="100%" fontSize="18px" />
+                      <GradientButton arrow={true} text={t('course.apply')} height="51px" width="100%" fontSize="18px" />
                     </a>
                   </div>
                 </div>
@@ -165,4 +182,4 @@ const TradingCourses = () => {
   );
 };
 
-export default withScrollEffect (TradingCourses);
+export default withScrollEffect(TradingCourses);

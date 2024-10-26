@@ -11,7 +11,7 @@ import bgImage7 from './assets/accordion_bg_7.png';
 import bgImage8 from './assets/accordion_bg_8.png';
 import bgImage9 from './assets/accordion_bg_9.png';
 import withScrollEffect from './WithScrollEffect';
-
+import { useTranslation } from 'react-i18next';
 
 const AccordionItem = ({ title, additionalText, bgImage }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +21,6 @@ const AccordionItem = ({ title, additionalText, bgImage }) => {
     };
 
     return (
-        <> 
-      
- 
         <div className={`accordion-item ${isOpen ? 'open' : ''}`}>
             <div
                 className="accordion-header"
@@ -43,24 +40,22 @@ const AccordionItem = ({ title, additionalText, bgImage }) => {
                 </div>
             )}
         </div>
-        </>
     );
 };
 
 const Accordion = () => {
-    const commonText =
-        'Отличие платного курса от бесплатного заключается в глубине материала и уровне обучения. В платном курсе вы получите более подробные уроки, дополнительные материалы, возможность индивидуальной консультации и, возможно, доступ к эксклюзивным ресурсам, которые не доступны в бесплатной версии.';
+    const { t } = useTranslation();
 
     const items = [
-        { title: 'Сколько стоит обучение в Trade Baza?', additionalText: commonText, bgImage: bgImage1 },
-        { title: 'Какой уровень подготовки необходим для прохождения курса?', additionalText: commonText, bgImage: bgImage2 },
-        { title: 'В чем отличие платного курса от бесплатного?', additionalText: commonText, bgImage: bgImage3 },
-        { title: 'Есть ли гарантия получения результатов прохождения курса?', additionalText: commonText, bgImage: bgImage4 },
-        { title: 'Какие материалы и ресурсы доступны участникам курса?', additionalText: commonText, bgImage: bgImage5 },
-        { title: 'Есть ли возможность задавать вопросы во время обучения?', additionalText: commonText, bgImage: bgImage6 },
-        { title: 'Сколько времени занимает прохождение каждого курса?', additionalText: commonText, bgImage: bgImage7 },
-        { title: 'Предоставляется ли сертификат или диплом по окончании курса?', additionalText: commonText, bgImage: bgImage8 },
-        { title: 'Есть ли бонусы или материалы для участников курса?', additionalText: commonText, bgImage: bgImage9 }
+        { title: t('accordion.items.0.title'), additionalText: t('accordion.items.0.additionalText'), bgImage: bgImage1 },
+        { title: t('accordion.items.1.title'), additionalText: t('accordion.items.1.additionalText'), bgImage: bgImage2 },
+        { title: t('accordion.items.2.title'), additionalText: t('accordion.items.2.additionalText'), bgImage: bgImage3 },
+        { title: t('accordion.items.3.title'), additionalText: t('accordion.items.3.additionalText'), bgImage: bgImage4 },
+        { title: t('accordion.items.4.title'), additionalText: t('accordion.items.4.additionalText'), bgImage: bgImage5 },
+        { title: t('accordion.items.5.title'), additionalText: t('accordion.items.5.additionalText'), bgImage: bgImage6 },
+        { title: t('accordion.items.6.title'), additionalText: t('accordion.items.6.additionalText'), bgImage: bgImage7 },
+        { title: t('accordion.items.7.title'), additionalText: t('accordion.items.7.additionalText'), bgImage: bgImage8 },
+        { title: t('accordion.items.8.title'), additionalText: t('accordion.items.8.additionalText'), bgImage: bgImage9 }
     ];
 
     return (
@@ -72,4 +67,4 @@ const Accordion = () => {
     );
 };
 
-export default withScrollEffect (Accordion);
+export default withScrollEffect(Accordion);

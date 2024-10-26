@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './AccordionMob.css';
 import arrowImage from './assets/arrow-image.svg';
 import withScrollEffect from './WithScrollEffect';
+import { useTranslation } from 'react-i18next';
 
 const AccordionItemMob = ({ title, additionalText }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,7 @@ const AccordionItemMob = ({ title, additionalText }) => {
 
     return (
         <div className={`accordion-item-mob ${isOpen ? 'open-mob' : ''}`}>
-            <div
-                className="accordion-header-mob"
-                onClick={handleToggle}
-            >
+            <div className="accordion-header-mob" onClick={handleToggle}>
                 <h3>{title}</h3>
                 <img
                     src={arrowImage}
@@ -34,19 +32,18 @@ const AccordionItemMob = ({ title, additionalText }) => {
 };
 
 const AccordionMob = () => {
-    const commonText =
-        'Отличие платного курса от бесплатного заключается в глубине материала и уровне обучения. В платном курсе вы получите более подробные уроки, дополнительные материалы, возможность индивидуальной консультации и, возможно, доступ к эксклюзивным ресурсам, которые не доступны в бесплатной версии.';
+    const { t } = useTranslation();
 
     const items = [
-        { title: 'Сколько стоит обучение в Trade Baza?', additionalText: commonText },
-        { title: 'Какой уровень подготовки необходим для прохождения курса?', additionalText: commonText },
-        { title: 'В чем отличие платного курса от бесплатного?', additionalText: commonText },
-        { title: 'Есть ли гарантия получения результатов прохождения курса?', additionalText: commonText },
-        { title: 'Какие материалы и ресурсы доступны участникам курса?', additionalText: commonText },
-        { title: 'Есть ли возможность задавать вопросы во время обучения?', additionalText: commonText },
-        { title: 'Сколько времени занимает прохождение каждого курса?', additionalText: commonText },
-        { title: 'Предоставляется ли сертификат или диплом по окончании курса?', additionalText: commonText },
-        { title: 'Есть ли бонусы или материалы для участников курса?', additionalText: commonText }
+        { title: t('accordion.items.0.title'), additionalText: t('accordion.items.0.additionalText') },
+        { title: t('accordion.items.1.title'), additionalText: t('accordion.items.1.additionalText') },
+        { title: t('accordion.items.2.title'), additionalText: t('accordion.items.2.additionalText') },
+        { title: t('accordion.items.3.title'), additionalText: t('accordion.items.3.additionalText') },
+        { title: t('accordion.items.4.title'), additionalText: t('accordion.items.4.additionalText') },
+        { title: t('accordion.items.5.title'), additionalText: t('accordion.items.5.additionalText') },
+        { title: t('accordion.items.6.title'), additionalText: t('accordion.items.6.additionalText') },
+        { title: t('accordion.items.7.title'), additionalText: t('accordion.items.7.additionalText') },
+        { title: t('accordion.items.8.title'), additionalText: t('accordion.items.8.additionalText') }
     ];
 
     return (
@@ -58,4 +55,4 @@ const AccordionMob = () => {
     );
 };
 
-export default withScrollEffect (AccordionMob);
+export default withScrollEffect(AccordionMob);

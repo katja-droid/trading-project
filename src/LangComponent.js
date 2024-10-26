@@ -1,20 +1,23 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './LangComponent.css';
 import langIcon from './assets/icon.svg';
 import arrowIcon from './assets/arrow.svg';
-import { useTranslation } from 'react-i18next'; // Use the useTranslation hook
+import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
-const LangComponent = () => {
-  const { i18n } = useTranslation(); // Use translation instance
+const LangComponent = ({ isOverlayVisible, toggleOverlay, language = 'en' }) => {
+  const { i18n } = useTranslation();
   const [isLangOpen, setLangOpen] = useState(false);
 
   const toggleLangOverlay = () => {
     setLangOpen(!isLangOpen);
+    toggleOverlay(!isLangOpen); // Call the toggleOverlay function with the new state
   };
 
   const selectLanguage = (lang) => {
-    i18n.changeLanguage(lang); // Use i18n to change language
+    i18n.changeLanguage(lang);
     setLangOpen(false);
+    toggleOverlay(false); // Ensure overlay is closed when a language is selected
   };
 
   return (
@@ -38,4 +41,14 @@ const LangComponent = () => {
   );
 };
 
-export default  LangComponent;
+LangComponent.propTypes = {
+  language: PropTypes.string,
+  toggleOverlay: PropTypes.func,  // Define the expected type
+  isOverlayVisible: PropTypes.bool,
+};
+
+LangComponent.defaultProps = {
+  toggleOverlay: () => {}, // Provide a default function
+};
+
+export default LangComponent;

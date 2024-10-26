@@ -24,10 +24,13 @@ import QuickRegistration from '../QuickRegistration';
 import QuickRegistrationMob from '../QuickRegistrationMob';
 import FooterMob from '../FooterMob';
 import CurrentStudyMob from '../CurrentStudyMob';
+import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const { t } = useTranslation(); // Initialize useTranslation
+  
 
   const containerStyles = isMdUp
     ? theme.customLayout.mdUp.container // 12-column layout for mdUp
@@ -78,9 +81,9 @@ const HomePage = () => {
       {/* Main Team Section */}
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
       <div style={{ width: '930px', margin: '0 auto',  }}>
-        <h1 className='main-heading' id="team">Наша команда <span className='main-heading-span'>профессионалов</span></h1>
+        <h1 className='main-heading' id="team">     {t('homePage.teamHeading')} <span className='main-heading-span'>{t('homePage.teamSubheading')}</span></h1>
         <p className='main-paragraph' >
-          Наша команда - это коллектив профессионалов, увлечённых трейдингом и финансовыми рынками. Мы собрались, чтобы поделиться нашими знаниями с теми, кто стремится освоить мир трейдинга.
+        {t('homePage.teamDescription')}
         </p>
       </div>
       </Box>
@@ -107,7 +110,7 @@ const HomePage = () => {
   <Container sx={containerStyles}>
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <h1 className='main-heading' id="faq" style={{ marginBottom: '50px' }}>
-            вы<span className='main-heading-span'> часто спрашивайте</span> нас...
+        {t('homePage.faqHeading')}<span className='main-heading-span'> {t('homePage.faqSubHeading')} </span>{t('homePage.faqUs')}
           </h1>
           <Accordion />
         </Box>
@@ -138,9 +141,12 @@ const HomePage = () => {
   <Box sx={{ gridColumn: 'span 3' }}>
     <div id="faq">
   <h1   className='main-heading-mob' style={{ marginTop: '50px' }}>
-            вы<span className='main-heading-span-mob'> часто спрашивайте</span> нас...
+
           </h1>
           </div>
+          <h1 className='main-heading-mob' id="faq" style={{ marginBottom: '50px' }}>
+        {t('homePage.faqHeading')}<span className='main-heading-span-mob'> {t('homePage.faqSubHeading')} </span>{t('homePage.faqUs')}
+          </h1>
     <AccordionMob />
   </Box>
 <div style={{backgroundColor: '#1C2532'}}>

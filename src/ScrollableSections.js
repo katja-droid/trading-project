@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './ScrollableSections.css';
 
 // Import the images as variables
@@ -8,30 +9,32 @@ import trainer3 from './assets/trainer3.png';
 import withScrollEffect from './WithScrollEffect';
 
 const ScrollableSections = () => {
+  const { t } = useTranslation(); // Initialize useTranslation
+
   const trainers = [
     {
       id: 1,
       photo: trainer1,
-      name: 'ДАНИЛА',
-      lastName: 'Анапов',
-      title: 'Специалист по продажам',
-      text: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('scrollableSections.trainer1.name'),
+      lastName: t('scrollableSections.trainer1.lastName'),
+      title: t('scrollableSections.trainer1.title'),
+      text: t('scrollableSections.trainer1.text'),
     },
     {
       id: 2,
       photo: trainer2,
-      name: 'ДАНИЛА',
-      lastName: 'Анапов',
-      title: 'Специалист по продажам',
-      text: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('scrollableSections.trainer2.name'),
+      lastName: t('scrollableSections.trainer2.lastName'),
+      title: t('scrollableSections.trainer2.title'),
+      text: t('scrollableSections.trainer2.text'),
     },
     {
       id: 3,
       photo: trainer3,
-      name: 'ДАНИЛА',
-      lastName: 'Анапов',
-      title: 'Специалист по продажам',
-      text: 'В трейдинге с 2019 года. Соавтор курсов TradeBaze. Эксперт на рынке криптовалют, также торгует американский рынок.',
+      name: t('scrollableSections.trainer3.name'),
+      lastName: t('scrollableSections.trainer3.lastName'),
+      title: t('scrollableSections.trainer3.title'),
+      text: t('scrollableSections.trainer3.text'),
     },
   ];
 
@@ -48,26 +51,26 @@ const ScrollableSections = () => {
 
   return (
     <>
-      <h1 className='main-heading-mob' style={{   marginTop: '50px'}} >
-      Наша  <span className='main-heading-span-mob'>команда профессионалов</span>
+      <h1 className='main-heading-mob' style={{ marginTop: '50px' }}>
+      {t('homePage.teamHeading')} <span className='main-heading-span-mob'>{t('homePage.teamSubheading')}</span>
       </h1>
       <p className='main-paragraph-mob'>
-      Наша команда - это коллектив профессионалов, увлечённых трейдингом и финансовыми рынками. Мы собрались, чтобы поделиться нашими знаниями с теми, кто стремится освоить мир трейдинга
+        {t('scrollableSections.paragraph')}
       </p>
-    <div className="scroll-container" ref={scrollRef}>
-      {trainers.map((trainer) => (
-        <div className="section" key={trainer.id}>
-          <div className="photo-badge">
-            <img src={trainer.photo} alt={trainer.name} className="photo" />
-            <div className="badge">{trainer.name} {trainer.lastName}</div>
+      <div className="scroll-container" ref={scrollRef}>
+        {trainers.map((trainer) => (
+          <div className="section" key={trainer.id}>
+            <div className="photo-badge">
+              <img src={trainer.photo} alt={trainer.name} className="photo" />
+              <div className="badge">{trainer.name} {trainer.lastName}</div>
+            </div>
+            <h2>{trainer.title}</h2>
+            <p>{trainer.text}</p>
           </div>
-          <h2>{trainer.title}</h2>
-          <p>{trainer.text}</p>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </>
   );
 };
 
-export default withScrollEffect (ScrollableSections);
+export default withScrollEffect(ScrollableSections);

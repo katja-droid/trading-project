@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Import useTranslation for translations
 import './SwipeableDivsMob.css';
-import trainer1 from './assets/trainer1.png';
-import trainer2 from './assets/trainer2.png';
-import trainer3 from './assets/trainer3.png';
 import reviewImage1 from './assets/review-mob-1.png';
 import reviewImage2 from './assets/review-mob-2.png';
 import reviewImage3 from './assets/review-mob-3.png';
@@ -12,29 +10,30 @@ import lineFaded from './assets/line_faded.svg';
 import withScrollEffect from './WithScrollEffect';
 
 const SwipeableDivsMob = () => {
+  const { t } = useTranslation(); // Initialize useTranslation
   const reviews = [
     {
       id: 1,
-      name: 'Андрей ШАБАНОВ',
-      title: 'Повар, художник',
-      course: 'Прошел курс “Основы трейдинга”',
-      feedback: 'Ну, бесплатный курс по трейдинга... так, не плох. Но мне нужно больше...',
+      name: t('swipeableDivs.divs.0.name'), // Translated name
+      title: t('swipeableDivs.divs.0.title'), // Translated title
+      course: t('swipeableDivs.divs.0.course'), // Translated course
+      feedback: t('swipeableDivs.divs.0.feedback'), // Translated feedback
       image: reviewImage1,
     },
     {
       id: 2,
-      name: 'Андрей ШАБАНОВ',
-      title: 'Повар, художник',
-      course: 'Прошел курс “Основы трейдинга”',
-      feedback: 'Ну, бесплатный курс по трейдинга... так, не плох. Но мне нужно больше...',
+      name: t('swipeableDivs.divs.1.name'), // Translated name
+      title: t('swipeableDivs.divs.1.title'), // Translated title
+      course: t('swipeableDivs.divs.1.course'), // Translated course
+      feedback: t('swipeableDivs.divs.1.feedback'), // Translated feedback
       image: reviewImage2,
     },
     {
       id: 3,
-      name: 'Андрей ШАБАНОВ',
-      title: 'Повар, художник',
-      course: 'Прошел курс “Основы трейдинга”',
-      feedback: 'Ну, бесплатный курс по трейдинга... так, не плох. Но мне нужно больше...',
+      name: t('swipeableDivs.divs.2.name'), // Translated name
+      title: t('swipeableDivs.divs.2.title'), // Translated title
+      course: t('swipeableDivs.divs.2.course'), // Translated course
+      feedback: t('swipeableDivs.divs.2.feedback'), // Translated feedback
       image: reviewImage3,
     },
   ];
@@ -46,9 +45,10 @@ const SwipeableDivsMob = () => {
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = sectionWidth * activeIndex; // Center default section
+      // Center the active review div
+      scrollRef.current.scrollLeft = sectionWidth * activeIndex - (scrollRef.current.clientWidth / 2) + (sectionWidth / 2);
     }
-  }, []);
+  }, [activeIndex]);
 
   const handleTouchStart = (e) => {
     startX = e.touches[0].pageX;
@@ -72,7 +72,7 @@ const SwipeableDivsMob = () => {
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
-        left: sectionWidth * activeIndex,
+        left: sectionWidth * activeIndex - (scrollRef.current.clientWidth / 2) + (sectionWidth / 2),
         behavior: 'smooth',
       });
     }
@@ -81,7 +81,7 @@ const SwipeableDivsMob = () => {
   return (
     <div style={{ marginTop: '50px' }}>
       <h1 className='main-heading-mob'>
-        Реальные истории успеха: <span className='main-heading-span-mob'>Отзывы о наших курсах</span>
+        {t('swipeableDivs.heading')} <span className='main-heading-span-mob'>{t('swipeableDivs.subHeading')}</span>
       </h1>
     
       <div className="line-indicators-reviews">

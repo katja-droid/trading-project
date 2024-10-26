@@ -103,6 +103,7 @@
   height: 30px; /* Explicit height for the icon container */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margin */
+  z-index: 0;
 }
 
 .navbar-icon {

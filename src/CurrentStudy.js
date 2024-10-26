@@ -1,55 +1,55 @@
 import React from 'react';
 import './CurrentStudy.css';
-import studyImage from './assets/current-study-image.png'; // Adjust the path to your image file
-import threeStars from './assets/three-stars.svg'; // Adjust the path to your image file
-import durationIcon from './assets/durationIcon.svg'; // Import the duration icon
-import knowledgeIcon from './assets/knowledgeIcon.svg'; // Import the knowledge icon
-import skillsIcon from './assets/skillsIcon.svg'; // Import the skills icon
-import GradientButton from './GradientButton'; // Ensure you import your GradientButton
+import studyImage from './assets/current-study-image.png';
+import threeStars from './assets/three-stars.svg';
+import durationIcon from './assets/durationIcon.svg';
+import knowledgeIcon from './assets/knowledgeIcon.svg';
+import skillsIcon from './assets/skillsIcon.svg';
+import GradientButton from './GradientButton';
 import withScrollEffect from './WithScrollEffect';
+import { useTranslation } from 'react-i18next';
 
 const CurrentStudy = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-     
-    <h1 className='main-heading' style={{ marginBottom: '50px'}}>ОБУЧЕНИе<span className='main-heading-span'> на данном этапе </span></h1>
- 
-    <div className="current-study-container-cs">
-      <img src={studyImage} alt="Current Study" className="study-image-cs" />
-      <div className="study-info-block-cs">
-        <p className='study-paragraph-cs'>
-          Курс "Основы трейдинга" - это идеальное введение в захватывающий мир финансовых рынков. 
-          Мы предлагаем обширный обзор основных концепций, терминов и инструментов, необходимых для успешного старта вашего пути в трейдинге.
-        </p>
-        <p className='study-paragraph-cs'>
-          В рамках курса вы изучите основы анализа рынка, стратегии управления рисками и методы управления капиталом. 
-          Мы также предоставим вам практические инструменты и советы, чтобы вы могли применить свои знания на практике и принимать информированные решения при торговле на бирже. 
-          Наша цель - помочь вам освоить основы трейдинга и стать уверенным и успешным трейдером.
-        </p>
-        <p className='study-paragraph-cs'>
-          В конечном итоге, этот курс не только представляет собой введение в мир трейдинга, но и станет вашим верным спутником на пути к финансовому успеху. 
-          Мы уверены, что после завершения курса вы будете готовы к самостоятельной торговле на бирже и сможете принимать информированные решения, чтобы достичь ваших финансовых целей.
-        </p>
-        <div className="course-details-cs">
-          <div className="course-detail-item-cs">
-            <img src={durationIcon} alt="Duration" className="detail-icon-cs" />
-            <span className="detail-text-cs">Длительность</span>
-            <span className="detail-value-cs">~2 часа</span>
-          </div>
-          <div className="course-detail-item-cs">
-            <img src={knowledgeIcon} alt="Знания" className="detail-icon-cs" />
-            <span className="detail-text-cs">Знания</span>
-            <span className="detail-value-cs"><img src={threeStars} alt="Знания" /></span>
-          </div>
-          <div className="course-detail-item-cs">
-            <img src={skillsIcon} alt="Навыки" className="detail-icon-cs" />
-            <span className="detail-text-cs">Навыки для торговли</span>
-            <span className="detail-value-cs"><img src={threeStars} alt="Навыки" /></span>
+      <h1 className='main-heading' style={{ marginBottom: '50px' }}>
+        {t('currentStudy.mainHeading')}
+        <span className='main-heading-span'> {t('currentStudy.mainHeadingSpan')}</span>
+      </h1>
+
+      <div className="current-study-container-cs">
+        <img src={studyImage} alt={t('currentStudy.imageAlt')} className="study-image-cs" />
+        
+        <div className="study-info-block-cs">
+          <p className='study-paragraph-cs'>{t('currentStudy.paragraph1')}</p>
+          <p className='study-paragraph-cs'>{t('currentStudy.paragraph2')}</p>
+          <p className='study-paragraph-cs'>{t('currentStudy.paragraph3')}</p>
+
+          <div className="course-details-cs">
+            <div className="course-detail-item-cs">
+              <img src={durationIcon} alt={t('currentStudy.durationAlt')} className="detail-icon-cs" />
+              <span className="detail-text-cs">{t('currentStudy.durationLabel')}</span>
+              <span className="detail-value-cs">{t('currentStudy.durationValue')}</span>
+            </div>
+
+            <div className="course-detail-item-cs">
+              <img src={knowledgeIcon} alt={t('currentStudy.knowledgeAlt')} className="detail-icon-cs" />
+              <span className="detail-text-cs">{t('currentStudy.knowledgeLabel')}</span>
+              <span className="detail-value-cs"><img src={threeStars} alt={t('currentStudy.knowledgeRating')} /></span>
+            </div>
+
+            <div className="course-detail-item-cs">
+              <img src={skillsIcon} alt={t('currentStudy.skillsAlt')} className="detail-icon-cs" />
+              <span className="detail-text-cs">{t('currentStudy.skillsLabel')}</span>
+              <span className="detail-value-cs"><img src={threeStars} alt={t('currentStudy.skillsRating')} /></span>
+            </div>
           </div>
         </div>
       </div>
-    </div></>
+    </>
   );
 };
 
-export default withScrollEffect (CurrentStudy);
+export default withScrollEffect(CurrentStudy);
