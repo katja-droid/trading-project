@@ -135,7 +135,7 @@ const CourseCards = () => {
                 <Link to={`/product/${course.id}`} style={{ textDecoration: 'none' }} className="more-btn-2">
                   {t('course.moreDetails')}
                 </Link>
-                <a href="https://t.me/your_telegram_chat_link" target="_blank" rel="noopener noreferrer">
+                <a href="https://telegram.com" target="_blank" rel="noopener noreferrer">
                   <GradientButton arrow={true} text={t('course.apply')} height="56px" width="195px" />
                 </a>
               </div>

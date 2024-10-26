@@ -105,8 +105,13 @@ const CourseCardsMob = () => {
                 </div>
               </div>
               <div className="course-buttons-mob">
-                <button className="more-btn-mob">Подробнее</button>
-                <GradientButton arrow={true} text="Записаться" height="56px" width="195px" />
+              <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+  <button className="more-btn-mob">Подробнее</button>
+</a>
+<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+  <GradientButton arrow={true} text="Записаться" height="56px" width="195px" />
+</a>
+
               </div>
             </div>
           </div>

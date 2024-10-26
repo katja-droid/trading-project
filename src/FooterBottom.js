@@ -20,9 +20,13 @@ const FooterBottom = () => {
         </p>
         
         <div className="footer-buttons-fb" style={{ zIndex: '228' }}>
-          <button className="hero-button-fb">{t('footerBottom.applyButton')}</button> {/* Use translation key */}
-          <GradientButton arrow={true} text={t('footerBottom.selectCourseButton')} width="240px" height="56px" /> {/* Use translation key */}
-        </div>
+        <a href="https://telegram.org" style={{padding: 0}} target="_blank" rel="noopener noreferrer">
+  <button className="hero-button-fb" style={{height: '100%'}}>{t('footerBottom.applyButton')}</button>
+</a>
+<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+  <GradientButton arrow={true} text={t('footerBottom.selectCourseButton')} width="240px" height="56px" />
+</a>
+    </div>
 
         <div className="text-with-images-fb">
           <div className="images-section-fb">

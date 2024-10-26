@@ -95,8 +95,13 @@ const AlsoInteresting = ({ excludeCourseId }) => { // Changed prop name to exclu
                   </div>
                 </div>
                 <div className="course-buttons">
-                  <button className="more-btn-2">{t('course.moreDetails')}</button>
-                  <GradientButton arrow={true} text={t('course.apply')} height="56px" width="195px" />
+                <a href="https://telegram.org" style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
+  <button className="more-btn-2">{t('course.moreDetails')}</button>
+</a>
+<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+  <GradientButton arrow={true} text={t('course.apply')} height="56px" width="195px" />
+</a>
+
                 </div>
               </div>
             </div>
