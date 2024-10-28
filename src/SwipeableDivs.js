@@ -5,7 +5,9 @@ import arrowLeftBright from './assets/arrow-left-bright.svg';
 import arrowLeftFaded from './assets/arrow-left-faded.svg';
 import arrowRightBright from './assets/arrow-right-bright.svg';
 import arrowRightFaded from './assets/arrow-right-faded.svg';
-import leftImage from './assets/sample-image.png';
+import leftImage1 from './assets/review-desk-1.png';
+import leftImage2  from './assets/review-desk-2.png';
+import leftImage3 from './assets/review-desk-3.png';
 import stars from './assets/stars.svg';
 import withScrollEffect from './WithScrollEffect';
 
@@ -16,6 +18,7 @@ const SwipeableDivs = () => {
   const divs = [
     {
       id: 1,
+      image: leftImage1, // New image property
       backgroundColor: 'transparent',
       name: t('swipeableDivs.divs.0.name'), // Translated name
       title: t('swipeableDivs.divs.0.title'), // Translated title
@@ -24,6 +27,7 @@ const SwipeableDivs = () => {
     },
     {
       id: 2,
+      image: leftImage2, // New image property
       backgroundColor: 'transparent',
       name: t('swipeableDivs.divs.1.name'), // Translated name
       title: t('swipeableDivs.divs.1.title'), // Translated title
@@ -32,6 +36,7 @@ const SwipeableDivs = () => {
     },
     {
       id: 3,
+      image: leftImage3, // New image property
       backgroundColor: 'transparent',
       name: t('swipeableDivs.divs.2.name'), // Translated name
       title: t('swipeableDivs.divs.2.title'), // Translated title
@@ -66,7 +71,7 @@ const SwipeableDivs = () => {
           {divs.map((div) => (
             <div key={div.id} className="swipeable-content-swd" style={{ backgroundColor: div.backgroundColor }}>
               <div className="image-container-swd">
-                <img src={leftImage} alt={`Person ${div.id}`} className="left-image-swd" />
+                <img src={div.image} alt={`Person ${div.id}`} className="left-image-swd" />
               </div>
               <div className="info-container-swd">
                 <img src={stars} alt="Stars" width="135px" />
