@@ -5,7 +5,9 @@ import arrowLeftBright from './assets/arrow-left-bright.svg';
 import arrowLeftFaded from './assets/arrow-left-faded.svg';
 import arrowRightBright from './assets/arrow-right-bright.svg';
 import arrowRightFaded from './assets/arrow-right-faded.svg';
-import leftImage from './assets/sample-image.png';
+import sampleImage1 from './assets/review-desk-1.png';
+import sampleImage2  from './assets/review-desk-2.png';
+import sampleImage3 from './assets/review-desk-3.png';
 import stars from './assets/stars.svg';
 import withScrollEffect from './WithScrollEffect';
 
@@ -16,6 +18,7 @@ const ReviewsOneCourse = () => {
   const divs = [
     {
       id: 1,
+      image: sampleImage1, // Assign specific image
       backgroundColor: 'transparent',
       name: t('swipeableDivs.divs.0.name'), // Translated name
       title: t('swipeableDivs.divs.0.title'), // Translated title
@@ -24,19 +27,21 @@ const ReviewsOneCourse = () => {
     },
     {
       id: 2,
+      image: sampleImage2,
       backgroundColor: 'transparent',
-      name: t('swipeableDivs.divs.1.name'), // Translated name
-      title: t('swipeableDivs.divs.1.title'), // Translated title
-      course: t('swipeableDivs.divs.1.course'), // Translated course
-      feedback: t('swipeableDivs.divs.1.feedback'), // Translated feedback
+      name: t('swipeableDivs.divs.1.name'),
+      title: t('swipeableDivs.divs.1.title'),
+      course: t('swipeableDivs.divs.1.course'),
+      feedback: t('swipeableDivs.divs.1.feedback'),
     },
     {
       id: 3,
+      image: sampleImage3,
       backgroundColor: 'transparent',
-      name: t('swipeableDivs.divs.2.name'), // Translated name
-      title: t('swipeableDivs.divs.2.title'), // Translated title
-      course: t('swipeableDivs.divs.2.course'), // Translated course
-      feedback: t('swipeableDivs.divs.2.feedback'), // Translated feedback
+      name: t('swipeableDivs.divs.2.name'),
+      title: t('swipeableDivs.divs.2.title'),
+      course: t('swipeableDivs.divs.2.course'),
+      feedback: t('swipeableDivs.divs.2.feedback'),
     },
   ];
 
@@ -58,13 +63,12 @@ const ReviewsOneCourse = () => {
         {t('swipeableDivs.headingOne')} <span className='main-heading-span'> {t('swipeableDivs.subHeadingOne')} </span>
       </h1>
    
-
       <div className="swipeable-container-swd">
         <div className="swipeable-div-swd" style={{ transform: `translateX(-${currentIndex * 1410}px)` }}>
           {divs.map((div) => (
             <div key={div.id} className="swipeable-content-swd" style={{ backgroundColor: div.backgroundColor }}>
               <div className="image-container-swd">
-                <img src={leftImage} alt={`Person ${div.id}`} className="left-image-swd" />
+                <img src={div.image} alt={`Person ${div.id}`} className="left-image-swd" />
               </div>
               <div className="info-container-swd">
                 <img src={stars} alt="Stars" width="135px" />
