@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './TradingCourses.css';
 import courseImage1 from './assets/courseImage1.png';
 import courseImage2 from './assets/courseImage2.png';
@@ -22,7 +22,7 @@ const TradingCourses = () => {
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
   const [startX, setStartX] = useState(0);
-
+  const navigate = useNavigate(); 
   // Define an array of base course data
   const baseCoursesData = [
     {
@@ -166,13 +166,13 @@ const TradingCourses = () => {
               </div>
               {activeIndex === index && (
                 <div className="course-buttons-mob">
-                    <Link 
-  to={`/product/${course.id}`} 
-  onClick={(e) => {
-    e.preventDefault(); // Prevents the default link behavior
-    window.scrollTo({ top: 0 });
-    setTimeout(() => (window.location.href = `/product/${course.id}`), 1); // Allows smooth scroll to finish before redirect
-  }}
+                      <Link 
+          to={`/product/${course.id}`} 
+          onClick={(e) => {
+            e.preventDefault(); // Prevents the default link behavior
+            window.scrollTo(0, 0); // Instant scroll to the top
+            navigate(`/product/${course.id}`); // Use useNavigate for instant navigation
+          }}
   style={{ textDecoration: 'none' }} className="more-btn-mob-2">{t('course.moreDetails')}</Link>
                   <div style={{ position: 'relative', zIndex: 10, marginTop: '10px'}}>
                     <a href="https://t.me/your-telegram-link" target="_blank" rel="noopener noreferrer">

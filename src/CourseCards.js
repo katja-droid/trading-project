@@ -55,6 +55,7 @@ const coursesData = [
 const CourseCards = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  
   const coursesData = [
     {
       price: t('course.coursesData.0.price'),
@@ -133,12 +134,12 @@ const CourseCards = () => {
               </div>
               <div className="course-buttons">
               <Link 
-  to={`/product/${course.id}`} 
-  onClick={(e) => {
-    e.preventDefault(); // Prevents the default link behavior
-    window.scrollTo({ top: 0 });
-    setTimeout(() => (window.location.href = `/product/${course.id}`), 1); // Allows smooth scroll to finish before redirect
-  }}
+          to={`/product/${course.id}`} 
+          onClick={(e) => {
+            e.preventDefault(); // Prevents the default link behavior
+            window.scrollTo(0, 0); // Instant scroll to the top
+            navigate(`/product/${course.id}`); // Use useNavigate for instant navigation
+          }}
   style={{ textDecoration: 'none' }} 
   className="more-btn-2"
 >      {t('course.moreDetails')} 
