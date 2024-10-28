@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './CourseCards.css';
 
@@ -54,7 +54,7 @@ const coursesData = [
 
 const CourseCards = () => {
   const { t } = useTranslation();
-
+  const navigate = useNavigate();
   const coursesData = [
     {
       price: t('course.coursesData.0.price'),
@@ -132,8 +132,16 @@ const CourseCards = () => {
                 </div>
               </div>
               <div className="course-buttons">
-                <Link to={`/product/${course.id}`} style={{ textDecoration: 'none' }} className="more-btn-2">
-                  {t('course.moreDetails')}
+              <Link 
+  to={`/product/${course.id}`} 
+  onClick={(e) => {
+    e.preventDefault(); // Prevents the default link behavior
+    window.scrollTo({ top: 0 });
+    setTimeout(() => (window.location.href = `/product/${course.id}`), 1); // Allows smooth scroll to finish before redirect
+  }}
+  style={{ textDecoration: 'none' }} 
+  className="more-btn-2"
+>      {t('course.moreDetails')} 
                 </Link>
                 <a href="https://telegram.com" target="_blank" rel="noopener noreferrer">
                   <GradientButton arrow={true} text={t('course.apply')} height="56px" width="195px" />

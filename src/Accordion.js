@@ -23,7 +23,7 @@ const AccordionItem = ({ title, additionalText, bgImage }) => {
     return (
         <div className={`accordion-item ${isOpen ? 'open' : ''}`}>
             <div
-                className="accordion-header"
+                className={`${isOpen ? 'white-accordion-header' : 'accordion-header'}`}
                 onClick={handleToggle}
                 style={{ backgroundImage: `url(${bgImage})` }}
             >

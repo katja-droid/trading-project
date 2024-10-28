@@ -14,7 +14,7 @@ const AccordionItemMob = ({ title, additionalText }) => {
 
     return (
         <div className={`accordion-item-mob ${isOpen ? 'open-mob' : ''}`}>
-            <div className="accordion-header-mob" onClick={handleToggle}>
+            <div  className={`${isOpen ? 'white-accordion-header-mob' : 'accordion-header-mob'}`} onClick={handleToggle}>
                 <h3>{title}</h3>
                 <img
                     src={arrowImage}

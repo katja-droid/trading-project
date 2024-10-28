@@ -9,10 +9,10 @@ import './App.css';
 import './i18n';
 
 // Import your SVG images
-import mainBg from './assets/main-bg.svg';
-import productBg from './assets/product-bg.svg';
-import mainBgMob from './assets/main-bg-mob.svg';
-import productBgMob from './assets/product-bg-mob.svg';
+import mainBg from './assets/main-bg.png';
+import productBg from './assets/product-bg.png';
+import mainBgMob from './assets/main-bg-mob.png';
+import productBgMob from './assets/product-bg-mob.png';
 
 const App = () => {
   const location = useLocation();
@@ -40,7 +40,7 @@ const App = () => {
     document.body.style.backgroundImage = `url(${bgImage})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
-    document.body.style.height = '100vh';
+ 
     document.body.style.margin = '0';
 
     // Cleanup function to remove background style when component unmounts or updates

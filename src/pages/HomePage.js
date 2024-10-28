@@ -25,7 +25,7 @@ import QuickRegistrationMob from '../QuickRegistrationMob';
 import FooterMob from '../FooterMob';
 import CurrentStudyMob from '../CurrentStudyMob';
 import { useTranslation } from 'react-i18next';
-
+import graphsBg from '../assets/graphs-section-bg.png'
 const HomePage = () => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -38,8 +38,8 @@ const HomePage = () => {
 
   return (
     <>
-      <div style={{ position: 'relative', width: '100%' }}>
-        <div style={{ backgroundColor: 'rgba(6, 16, 21, 0.4)', }} >
+      <div style={{backgroundColor: 'rgba(6, 16, 21, 0.4)', zIndex: 22, position: 'relative', width: '100%', backdropFilter: 'blur(8px)' }}>
+        <div style={{  }} >
         <Container sx={containerStyles}>
           <Box sx={{ gridColumn: 'span 3', zIndex: 1, position: 'relative' }}>
             <Navbar />
@@ -72,7 +72,8 @@ const HomePage = () => {
         </Container>
       )}
   {/* Desktop Registration and Accordion */}
-  <Container sx={containerStyles}>
+  <div style={{ backgroundImage: `url(${graphsBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+  <Container sx={containerStyles} >
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
          
           <Registration />
@@ -87,6 +88,7 @@ const HomePage = () => {
         </p>
       </div>
       </Box>
+      </div>
       {/* Trainers Section with Background Image */}
       <Box sx={{display: { xs: 'none', md: 'block' }}}>
       <div style={{ marginBottom: '150px' }}>
@@ -132,8 +134,9 @@ const HomePage = () => {
   <div id="reviews">
   <SwipeableDivsMob />
   </div>
-
+  <div style={{ backgroundImage: `url(${graphsBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
 <QuickRegistrationMob/>
+</div>
 <div id="team">
   <ScrollableSections />
   </div>

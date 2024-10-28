@@ -12,7 +12,6 @@
 
 .study-info-block-cs {
     width: 810px; /* Set the block width */
-    padding: 20px; /* Optional padding */
     border-radius: 8px; /* Optional border radius */
     margin-left: 20px; /* Space between the image and block */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
@@ -32,7 +31,7 @@
 }
 
 .course-details-cs {
-    margin-top: 20px;
+    margin-top: 39px;
 }
 
 .course-detail-item-cs {
@@ -87,11 +86,15 @@
     font-size: 24px;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 
 .study-paragraph-cs:not(:first-child) {
     font-size: 24px;
     margin: 0;
     padding: 0;
-    margin-top: 31px;
+    margin-top: 15px;
+}
+.study-paragraph-cs:last-child{
+
 }

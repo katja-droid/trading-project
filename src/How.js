@@ -13,7 +13,7 @@ const How = () => {
       <h1 className='main-heading' id="about">
         {t('how.titlePart1')} <span className='main-heading-span'>{t('how.titlePart2')}</span>
       </h1>
-      <p className='main-paragraph'>
+      <p className='main-paragraph' style={{color: '#fff'}}>
         {t('how.description')}
       </p>
       <div className="grid-container-h">

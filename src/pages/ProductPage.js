@@ -22,6 +22,8 @@ import CurrentStudyMob from '../CurrentStudyMob';
 import QuickRegistrationMob from '../QuickRegistrationMob';
 import TradingCourses from '../TradingCourses';
 import FooterMob from '../FooterMob';
+import graphsBg from '../assets/graphs-section-bg.png'
+import ReviewsOneCourse from '../ReviewsOneCourse';
 
 const ProductPage = () => {
   const theme = useTheme();
@@ -56,7 +58,7 @@ const ProductPage = () => {
       {isMdUp && (
         <Container sx={containerStyles}>
           <Box sx={{ gridColumn: 'span 3' }}>
-            <SwipeableDivs />
+          <ReviewsOneCourse/>
           </Box>
           <AlsoInteresting excludeCourseId ={1}/>
 
@@ -69,7 +71,9 @@ const ProductPage = () => {
 <Box sx={{ display: { xs: 'block', md: 'none' } }}>
   <HeroProduct/>
   <CurrentStudyMob/>
+  <div style={{ backgroundImage: `url(${graphsBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
   <QuickRegistrationMob/>
+  </div>
   <TradingCourses/>
   <SwipeableDivsMob/>
   <FooterMob/>

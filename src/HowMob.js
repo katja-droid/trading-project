@@ -13,7 +13,7 @@ const HowMob = () => {
       <h1 className='main-heading-mob' id="aboutmb">
         {t('how.titlePart1')} <span className='main-heading-span-mob'>{t('how.titlePart2')}</span>
       </h1>
-      <p className='main-paragraph-mob'>
+      <p className='main-paragraph-mob' style={{color: '#fff'}}>
         {t('how.description')}
       </p>
 

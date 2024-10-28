@@ -49,7 +49,7 @@
 .hero-image {
   position: absolute;
   right: 0;
-  top: 0; /* Stick the image to the top */
+  top: 10px; /* Stick the image to the top */
   z-index: -1; /* Ensure it's behind the text */
   width: 54.57%;
   max-width: 951.84px;
@@ -140,6 +140,7 @@
 .images-section {
   display: flex;
   justify-content: center; /* Center the images horizontally */
+  
 }
 
 .images-section img {
@@ -203,6 +204,9 @@ display: block;
   margin-top: 25px;
   margin-bottom: 45px;
 }
+.images-section-mob{
+  width: 162.41px;
+}
 .images-section-mob img{
   width: 46px;
   height: 46px;
@@ -212,6 +216,7 @@ display: block;
   font-size: 14px;
   color: #fff;
   line-height: 1.6;
+  width: 90px;
 }
 
 

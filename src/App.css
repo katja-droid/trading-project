@@ -35,7 +35,7 @@
   color: transparent; /* Hide the actual text color */
 }
 .main-paragraph{
-  color: #fff;
+  color: #A9A9A9;
   line-height: 40px;
   font-size: 20px;
   text-align: center;
@@ -54,4 +54,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
+}
+.copyright{
+  color: #A9A9A9;
 }

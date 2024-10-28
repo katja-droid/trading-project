@@ -96,4 +96,18 @@
     left: 10px;
     width: 85px;
   }
-  
+  .review-button-mob{
+    background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
+    color: #000;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'SF UI Display';
+    font-weight: 600;
+    width: 265px; /* Ensure the button fits well */
+    height: 51px; /* Ensure the button fits well */
+    padding: 0; /* Remove padding */
+    display: flex; /* Ensure text centers */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    margin-top: 15px;
+  }

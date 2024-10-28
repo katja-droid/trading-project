@@ -138,6 +138,8 @@ const resources = {
 "swipeableDivs": {
   "heading": "Real Success Stories:",
   "subHeading": "Reviews of Our Courses",
+  "headingOne": "Reviews for the course",
+  "subHeadingOne": "«BASICS OF TRADING»",
   "paragraph": "Every review for us is not just words on a screen; it's the story of a person who has walked the path of learning with us. We are proud of every successful step our students take and grateful for the trust they place in us by sharing their experiences and impressions.",
   "divs": [
     {
@@ -289,8 +291,8 @@ const resources = {
 
     "heroproduct": {
       "educationalCourse": "Educational Course",
-      "courseTitle": "BASICS OF TRADING",
-      "courseDescription": "An online trading course for modern people: from the basics of financial literacy to developing your own strategy.",
+      "courseTitle": "«BASICS OF TRADING»",
+      "courseDescription": "Free introductory course for those who already want to understand such trading and exchange",
       "applyButton": "Submit Application",
       "selectCourseButton": "Choose Course",
       "passedCourse": "Course Completed"
@@ -491,6 +493,8 @@ const resources = {
             "swipeableDivs": {
               "heading": "Реальные истории успеха:",
               "subHeading": "Отзывы о наших курсах",
+              "headingOne": "Отзывы о курсе",
+              "subHeadingOne": "«ОСНОВЫ ТРЕЙДИНГА»",
               "paragraph": "Каждый отзыв для нас - не просто слова на экране, это история человека, который прошел путь обучения вместе с нами. Мы гордимся каждым успешным шагом наших учеников и благодарны за доверие, которое они оказывают, делясь своим опытом и впечатлениями.",
               "divs": [
                 {
@@ -645,8 +649,8 @@ const resources = {
               
                     "heroproduct": {
                       "educationalCourse": "Образовательный курс",
-                      "courseTitle": "ОСНОВЫ ТРЕЙДИНГА",
-                      "courseDescription": "Онлайн-курс по торговле для современных людей: от базы финансовой грамотности до собственной стратегии",
+                      "courseTitle": "«ОСНОВЫ ТРЕЙДИНГА»",
+                      "courseDescription": "Бесплатный вводный курс для тех, кто уже хочет понять такое трейдинг и биржа",
                       "applyButton": "Оставить заявку",
                       "selectCourseButton": "Выбрать курс",
                       "passedCourse": "Прошли Курс"

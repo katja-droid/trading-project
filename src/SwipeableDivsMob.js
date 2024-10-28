@@ -112,6 +112,9 @@ const SwipeableDivsMob = () => {
             <h3 className="title-reviews">{review.title}</h3>
             <p className="course-reviews">{review.course}</p>
             <p className="feedback-reviews">{review.feedback}</p>
+            <a href="https://telegram.org" style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
+  <button className="review-button-mob">Оставить отзыв</button>
+</a>
           </div>
         ))}
       </div>

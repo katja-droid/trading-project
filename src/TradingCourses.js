@@ -166,7 +166,14 @@ const TradingCourses = () => {
               </div>
               {activeIndex === index && (
                 <div className="course-buttons-mob">
-                  <Link to={`/product/${index}`} style={{textDecoration: 'none'}} className="more-btn-mob-2">{t('course.moreDetails')}</Link>
+                    <Link 
+  to={`/product/${course.id}`} 
+  onClick={(e) => {
+    e.preventDefault(); // Prevents the default link behavior
+    window.scrollTo({ top: 0 });
+    setTimeout(() => (window.location.href = `/product/${course.id}`), 1); // Allows smooth scroll to finish before redirect
+  }}
+  style={{ textDecoration: 'none' }} className="more-btn-mob-2">{t('course.moreDetails')}</Link>
                   <div style={{ position: 'relative', zIndex: 10, marginTop: '10px'}}>
                     <a href="https://t.me/your-telegram-link" target="_blank" rel="noopener noreferrer">
                       <GradientButton arrow={true} text={t('course.apply')} height="51px" width="100%" fontSize="18px" />

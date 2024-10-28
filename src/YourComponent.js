@@ -13,6 +13,16 @@ import { useTranslation } from 'react-i18next';
 
 const YourComponent = () => {
   const theme = useTheme();
+  const gradientTextStyle = {
+    fontFamily: 'SF UI Display',
+    fontWeight: 900, // Black
+    fontSize: '85px', // Size for all text
+    background: 'linear-gradient(to top right, #8CC2E9, #A9E1D3)', // Common gradient background
+    WebkitBackgroundClip: 'text', // Clip the background to the text
+    WebkitTextFillColor: 'transparent', // Make text transparent to show gradient
+    textTransform: 'uppercase', // Transform text to uppercase
+    letterSpacing: '-0.06em', 
+  };
   
   const { t } = useTranslation();
   return (
@@ -60,54 +70,37 @@ const YourComponent = () => {
   >
        {t('main.resourceWhere')} 
   </Typography>
-  <Typography
-    variant="h1" // You can adjust the variant if needed
-    sx={{
-      fontFamily: 'SF UI Display',
-      fontWeight: 900, // Black
-      fontSize: '85px', // Size for "каждый", "сделает", "РЕЗУЛЬТАТ"
-      background: 'linear-gradient(to right, #A9E1D3, #8CC2E9)', // Gradient background
-      WebkitBackgroundClip: 'text', // Clip the background to the text
-      WebkitTextFillColor: 'transparent', // Make text transparent to show gradient
-      margin: '17px 0 0', // Add top margin for spacing
-      textTransform: 'uppercase', // Transform text to uppercase
-      letterSpacing: '-0.06em', 
-    }}
-  >
- {t('main.everyone')}
-  </Typography>
-  <Typography
-    variant="h1" // You can adjust the variant if needed
-    sx={{
-      fontFamily: 'SF UI Display',
-      fontWeight: 900, // Black
-      fontSize: '85px', // Size for "каждый", "сделает", "РЕЗУЛЬТАТ"
-      background: 'linear-gradient(to right, #A9E1D3, #8CC2E9)', // Gradient background
-      WebkitBackgroundClip: 'text', // Clip the background to the text
-      WebkitTextFillColor: 'transparent', // Make text transparent to show gradient
-      margin: 0, // Remove default margin
-      textTransform: 'uppercase', // Transform text to uppercase
-      letterSpacing: '-0.06em', 
-    }}
-  >
-     {t('main.willAchieve')}
-  </Typography>
-  <Typography
-    variant="h1" // You can adjust the variant if needed
-    sx={{
-      fontFamily: 'SF UI Display',
-      fontWeight: 900, // Black
-      fontSize: '85px', // Size for "каждый", "сделает", "РЕЗУЛЬТАТ"
-      background: 'linear-gradient(to right, #A9E1D3, #8CC2E9)', // Gradient background
-      WebkitBackgroundClip: 'text', // Clip the background to the text
-      WebkitTextFillColor: 'transparent', // Make text transparent to show gradient
-      margin: 0, // Remove default margin
-      textTransform: 'uppercase', // Transform text to uppercase
-      letterSpacing: '-0.06em', 
-    }}
-  >
-      {t('main.result')}
-  </Typography>
+
+<Typography
+  variant="h1"
+  sx={{
+    ...gradientTextStyle,
+    margin: '17px 0 0', // Add top margin only for the first element
+  }}
+>
+  {t('main.everyone')}
+</Typography>
+
+<Typography
+  variant="h1"
+  sx={{
+    ...gradientTextStyle,
+    margin: 0, // Remove default margin for remaining elements
+  }}
+>
+  {t('main.willAchieve')}
+</Typography>
+
+<Typography
+  variant="h1"
+  sx={{
+    ...gradientTextStyle,
+    margin: 0, // Remove default margin for remaining elements
+  }}
+>
+  {t('main.result')}
+</Typography>
+
 </Box>
 
           </Box>
@@ -150,7 +143,7 @@ const YourComponent = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    color: 'white',
+                    color: '#A9A9A9',
                     fontFamily: 'SF UI Display',
                     fontSize: '16px',
                     lineHeight: 'normal',
@@ -197,7 +190,7 @@ const YourComponent = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    color: 'white',
+                    color: '#A9A9A9',
                     fontFamily: 'SF UI Display',
                     fontSize: '16px',
                     lineHeight: 'normal',
@@ -243,7 +236,7 @@ const YourComponent = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    color: 'white',
+                    color: '#A9A9A9',
                     fontFamily: 'SF UI Display',
                     fontSize: '16px',
                     lineHeight: 'normal',
@@ -291,7 +284,7 @@ const YourComponent = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    color: 'white',
+                    color: '#A9A9A9',
                     fontFamily: 'SF UI Display',
                     fontSize: '16px',
                     lineHeight: 'normal',
@@ -336,7 +329,7 @@ const YourComponent = () => {
                 </Typography>
                 <Typography
                   sx={{
-                    color: 'white',
+                    color: '#A9A9A9',
                     fontFamily: 'SF UI Display',
                     fontSize: '16px',
                     lineHeight: 'normal',

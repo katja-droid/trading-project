@@ -27,7 +27,28 @@
     border-radius: 25px 25px 0 0; /* Rounded corners for the header only */
     transition: background 0.3s ease;
 }
-
+.white-accordion-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-left: 100px;
+    padding-right: 32px;
+    cursor: pointer;
+    background-size: cover; /* Ensure the header background covers */
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px 25px 0 0; /* Rounded corners for the header only */
+    transition: background 0.3s ease;
+}
+.white-accordion-header h3{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+}
 .accordion-header h3 {
     padding: 0;
     margin: 0;
@@ -55,8 +76,13 @@
     font-size: 20px;
     text-align: justify;
     line-height: 30px;
+    color: #fff;
+}
+.accordion-header .white-header h3{
+    color: #fff;
 }
 .accordion-content p{
     padding: 0;
     margin: 0;
+    font-size: 20px;
 }

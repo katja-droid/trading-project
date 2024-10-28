@@ -15,6 +15,7 @@ import arrowLeftBright from './assets/arrow-left-bright.svg';
 import arrowRightBright from './assets/arrow-right-bright.svg';
 import withScrollEffect from './WithScrollEffect';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const CourseCardsMob = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -105,9 +106,16 @@ const CourseCardsMob = () => {
                 </div>
               </div>
               <div className="course-buttons-mob">
-              <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+              <Link 
+  to={`/product/${course.id}`} 
+  onClick={(e) => {
+    e.preventDefault(); // Prevents the default link behavior
+    window.scrollTo({ top: 0 });
+    setTimeout(() => (window.location.href = `/product/${course.id}`), 300); // Allows smooth scroll to finish before redirect
+  }}
+  style={{ textDecoration: 'none' }} >
   <button className="more-btn-mob">Подробнее</button>
-</a>
+  </Link>
 <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
   <GradientButton arrow={true} text="Записаться" height="56px" width="195px" />
 </a>

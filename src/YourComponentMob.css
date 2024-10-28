@@ -21,7 +21,7 @@
     font-weight: 900; /* Black */
     font-size: 48px; /* Adjusted size */
     color: transparent; /* Make text transparent to show gradient */
-    background: linear-gradient(to right, #A9E1D3, #8CC2E9); /* Gradient */
+    background: linear-gradient(to top right, #8CC2E9, #A9E1D3);
     -webkit-background-clip: text; /* Clip background to text */
     background-clip: text; /* Clip background to text */
     margin: 10px 0; /* Add margin */
