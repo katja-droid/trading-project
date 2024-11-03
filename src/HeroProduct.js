@@ -97,7 +97,7 @@ const HeroProduct = () => {
               <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
   <button className="hero-button-mob">{t('heroproduct.applyButton')}</button>
 </a>
-<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+<a href="#courses" onClick={(e) => handleScroll(e, 'courses')}  target="_blank" rel="noopener noreferrer">
   <GradientButton arrow={true} text={t('heroproduct.selectCourseButton')} width="265px" height="51px" fontSize="18px" />
 </a>
     </div>
