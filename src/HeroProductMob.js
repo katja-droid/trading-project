@@ -92,7 +92,7 @@ const HeroProduct = () => {
 
               {/* Add Buttons */}
               <div className="hero-buttons-mob">
-                <button className="hero-button">Оставить заявку</button>
+                <button className="hero-button" href="#courses" onClick={(e) => handleScroll(e, 'courses')}>Оставить заявку</button>
                 <GradientButton arrow={true} text="Выбрать курс" width="265px" height="51px" fontSize="18px"></GradientButton>
               </div>
 
