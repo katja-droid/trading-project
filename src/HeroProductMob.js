@@ -10,12 +10,34 @@ import image4 from './assets/profile4.png';
 import { useTheme } from '@emotion/react';
 import GradientButton from './GradientButton';
 import withScrollEffect from './WithScrollEffect';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 const HeroProduct = () => {
   const isMdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const theme = useTheme();
   const matchesMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleScroll = (event, targetId) => {
+    event.preventDefault();
 
+    const scrollToSection = () => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+
+    // Redirect if not on the home page
+    if (location.pathname !== '/') {
+      navigate('/'); // Navigate to home
+      setTimeout(scrollToSection, 100);  // Delay to allow page load
+    } else {
+      scrollToSection();
+    }
+  };
   const containerStyles = matchesMdUp
     ? theme.customLayout.mdUp.container // 12-column layout for mdUp
     : theme.customLayout.xsToSm.container; // 3-column layout for xs to sm
@@ -36,7 +58,7 @@ const HeroProduct = () => {
 
             {/* Add Buttons */}
             <div className="hero-buttons">
-              <button className="hero-button">Оставить заявку</button>
+              <button  href="#courses" onClick={(e) => handleScroll(e, 'courses')} className="hero-button">Оставить заявку</button>
               <GradientButton arrow={true} text="Выбрать курс" width="229.09px" height="56px" />
             </div>
 

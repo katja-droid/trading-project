@@ -11,13 +11,36 @@ import { useTheme } from '@emotion/react';
 import GradientButton from './GradientButton';
 import withScrollEffect from './WithScrollEffect';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
   const isMdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const theme = useTheme();
   const matchesMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleScroll = (event, targetId) => {
+    event.preventDefault();
 
+    const scrollToSection = () => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+
+    // Redirect if not on the home page
+    if (location.pathname !== '/') {
+      navigate('/'); // Navigate to home
+      setTimeout(scrollToSection, 100);  // Delay to allow page load
+    } else {
+      scrollToSection();
+    }
+  };
   const containerStyles = matchesMdUp
     ? theme.customLayout.mdUp.container
     : theme.customLayout.xsToSm.container;
@@ -40,7 +63,7 @@ const Hero = () => {
             <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
   <button className="hero-button">{t('hero.apply')}</button>
 </a>
-<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+<a href="#courses" onClick={(e) => handleScroll(e, 'courses')} target="_blank" rel="noopener noreferrer">
   <GradientButton arrow={true} text={t('hero.chooseCourse')} width="229.09px" height="56px" />
 </a>
 
@@ -80,7 +103,7 @@ const Hero = () => {
               <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
   <button className="hero-button-mob">{t('hero.apply')}</button>
 </a>
-<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+<a href="#courses" onClick={(e) => handleScroll(e, 'courses')}  target="_blank" rel="noopener noreferrer">
   <GradientButton fontSize="18px" arrow={true} text={t('hero.chooseCourse')} width="265px" height="51px" />
 </a>
 

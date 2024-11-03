@@ -11,13 +11,36 @@ import image4 from './assets/profile4.png';
 import { useTheme } from '@emotion/react';
 import GradientButton from './GradientButton';
 import withScrollEffect from './WithScrollEffect';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const HeroProduct = () => {
   const { t } = useTranslation(); // Initialize the translation hook
   const isMdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const theme = useTheme();
   const matchesMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleScroll = (event, targetId) => {
+    event.preventDefault();
 
+    const scrollToSection = () => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    };
+
+    // Redirect if not on the home page
+    if (location.pathname !== '/') {
+      navigate('/'); // Navigate to home
+      setTimeout(scrollToSection, 100);  // Delay to allow page load
+    } else {
+      scrollToSection();
+    }
+  };
   const containerStyles = matchesMdUp
     ? theme.customLayout.mdUp.container // 12-column layout for mdUp
     : theme.customLayout.xsToSm.container; // 3-column layout for xs to sm
@@ -40,7 +63,7 @@ const HeroProduct = () => {
             <a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
   <button className="hero-button">{t('heroproduct.applyButton')}</button>
 </a>
-<a href="https://telegram.org" target="_blank" rel="noopener noreferrer">
+<a href="#courses" onClick={(e) => handleScroll(e, 'courses')} target="_blank" rel="noopener noreferrer">
   <GradientButton arrow={true} text={t('heroproduct.selectCourseButton')} width="229.09px" height="56px" />
 </a>
       </div>

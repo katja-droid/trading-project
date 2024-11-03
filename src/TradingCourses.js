@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './TradingCourses.css';
@@ -22,8 +23,11 @@ const TradingCourses = () => {
   const scrollRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(1);
   const [startX, setStartX] = useState(0);
-  const navigate = useNavigate(); 
-  // Define an array of base course data
+  const navigate = useNavigate();
+
+  const courseWidth = 320;
+  const gap = 20;
+
   const baseCoursesData = [
     {
       priceKey: 'course.coursesData.0.price',
@@ -34,7 +38,7 @@ const TradingCourses = () => {
       knowledgeStars: threeStars,
       skillsStars: threeStars,
       image: courseImage1,
-      id: 1,
+      id: 0,
     },
     {
       priceKey: 'course.coursesData.1.price',
@@ -45,7 +49,7 @@ const TradingCourses = () => {
       knowledgeStars: threeFiveStars,
       skillsStars: fourStars,
       image: courseImage2,
-      id: 2,
+      id: 1,
     },
     {
       priceKey: 'course.coursesData.2.price',
@@ -56,11 +60,10 @@ const TradingCourses = () => {
       knowledgeStars: fiveStars,
       skillsStars: fiveStars,
       image: courseImage3,
-      id: 3,
+      id: 2,
     },
   ];
 
-  // Map over the base data to create the translated coursesData
   const coursesData = baseCoursesData.map(course => ({
     price: t(course.priceKey),
     title: t(course.titleKey),
@@ -75,11 +78,25 @@ const TradingCourses = () => {
 
   useEffect(() => {
     if (scrollRef.current) {
-      const courseWidth = 320;
-      const gap = 20;
       scrollRef.current.scrollLeft = (courseWidth + gap) * activeIndex;
     }
   }, [activeIndex]);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const maxScrollLeft = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+      const newIndex = Math.round(scrollPosition / (courseWidth + gap));
+  
+      // Check if we are at the maximum scroll position to activate the last item
+      if (Math.abs(scrollPosition - maxScrollLeft) < 1) {
+        setActiveIndex(coursesData.length - 1); // Set to last index explicitly
+      } else if (Math.abs(activeIndex - newIndex) >= 1) {
+        setActiveIndex(newIndex); // Otherwise, set to calculated index
+      }
+    }
+  };
+  
 
   const handleTouchStart = (e) => {
     setStartX(e.touches[0].pageX);
@@ -93,20 +110,29 @@ const TradingCourses = () => {
     }
   };
 
-  const handleTouchEnd = () => {
+  const handleLineClick = (index) => {
     if (scrollRef.current) {
-      const courseWidth = 320;
-      const gap = 20;
-      const scrollPosition = scrollRef.current.scrollLeft;
-      const currentIndex = Math.round(scrollPosition / (courseWidth + gap));
-      setActiveIndex(currentIndex);
+      scrollRef.current.scrollTo({
+        left: (courseWidth + gap) * index,
+        behavior: 'smooth',
+      });
+      setActiveIndex(index);
     }
   };
-
-  const handleLineClick = (index) => {
-    setActiveIndex(index);
+  
+  const handleTouchEnd = () => {
+    if (scrollRef.current) {
+      const newIndex = Math.round(scrollRef.current.scrollLeft / (courseWidth + gap));
+      setActiveIndex(newIndex);
+      // Ensure precise alignment by using scrollTo with calculated position
+      scrollRef.current.scrollTo({
+        left: (courseWidth + gap) * newIndex,
+        behavior: 'smooth',
+      });
+    }
   };
-
+  
+  
   return (
     <div className="trading-course-container-mob">
       <h1 className="main-heading-mob">
@@ -128,13 +154,18 @@ const TradingCourses = () => {
       <div
         className="scroll-container-courses-mob"
         ref={scrollRef}
+        onScroll={handleScroll}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         style={{ overflowX: 'scroll', display: 'flex' }}
       >
         {coursesData.map((course, index) => (
-          <div key={index} className="trading-course-card-mob" style={{ opacity: activeIndex === index ? 1 : 0.35 }}>
+          <div
+            key={index}
+            className="trading-course-card-mob"
+            style={{ opacity: activeIndex === index ? 1 : 0.35 }}
+          >
             <div className="image-container-mob">
               <img src={course.image} alt={course.title} className="course-image-mob" />
               {course.price && (
@@ -166,14 +197,18 @@ const TradingCourses = () => {
               </div>
               {activeIndex === index && (
                 <div className="course-buttons-mob">
-                      <Link 
-          to={`/product/${course.id}`} 
-          onClick={(e) => {
-            e.preventDefault(); // Prevents the default link behavior
-            window.scrollTo(0, 0); // Instant scroll to the top
-            navigate(`/product/${course.id}`); // Use useNavigate for instant navigation
-          }}
-  style={{ textDecoration: 'none' }} className="more-btn-mob-2">{t('course.moreDetails')}</Link>
+                  <Link 
+                    to={`/product/${course.id}`} 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo(0, 0);
+                      navigate(`/product/${course.id}`);
+                    }}
+                    style={{ textDecoration: 'none' }}
+                    className="more-btn-mob-2"
+                  >
+                    {t('course.moreDetails')}
+                  </Link>
                   <div style={{ position: 'relative', zIndex: 10, marginTop: '10px'}}>
                     <a href="https://t.me/your-telegram-link" target="_blank" rel="noopener noreferrer">
                       <GradientButton arrow={true} text={t('course.apply')} height="51px" width="100%" fontSize="18px" />
